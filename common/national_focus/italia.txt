@@ -1,0 +1,2130 @@
+focus_tree = {
+	id = italian_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ITA
+		}
+	}
+	default = no
+	focus = {
+		id = ITA_1
+		text = 深紅の洪水
+		icon = GFX_focus_prc_agrarian_socialism
+		cost = 30.00
+		mutually_exclusive = {
+			focus = ITA_11
+			focus = ITA_21
+			focus = ITA_63
+			focus = ITA_74
+		}
+		x = 2
+		y = 0
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.95 }
+			set_politics = { ruling_party = communism elections_allowed = yes }
+		}
+
+	}
+	focus = {
+		id = ITA_11
+		text = 王国は我らの為に
+		icon = GFX_focus_generic_home_defense
+		cost = 30.00
+		mutually_exclusive = {
+			focus = ITA_1
+			focus = ITA_21
+			focus = ITA_63
+			focus = ITA_74
+		}
+		x = 6
+		y = 0
+		completion_reward = {
+			add_popularity = { ideology = despotism popularity = 0.45 }
+		}
+
+	}
+	focus = {
+		id = ITA_21
+		text = 賽は投げられた
+		icon = GFX_focus_GRE_reviving_the_double_headed_eagle
+		cost = 30.00
+		mutually_exclusive = {
+			focus = ITA_1
+			focus = ITA_11
+			focus = ITA_63
+			focus = ITA_74
+		}
+		x = 11
+		y = 0
+		completion_reward = {
+			add_popularity = { ideology = reactionary popularity = 0.8 }
+			set_politics = { ruling_party = reactionary elections_allowed = yes }
+		}
+
+	}
+	focus = {
+		id = ITA_35
+		text = 特殊国債の発行
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 10.00
+		x = 24
+		y = 0
+		completion_reward = {
+			add_ideas = OPmod_idea_ITA_1
+		}
+
+	}
+	focus = {
+		id = ITA_44
+		text = 中央指令委員会
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10.00
+		x = 30
+		y = 0
+		completion_reward = {
+			army_experience = 150
+			air_experience = 150
+		}
+
+	}
+	focus = {
+		id = ITA_63
+		text = 地中海の光
+		icon = GFX_focus_generic_coastal_fort
+		cost = 30.00
+		mutually_exclusive = {
+			focus = ITA_1
+			focus = ITA_11
+			focus = ITA_21
+			focus = ITA_74
+		}
+		x = 16
+		y = 0
+		completion_reward = {
+			add_popularity = { ideology = conservatism popularity = 0.55 }
+			set_politics = { ruling_party = conservatism elections_allowed = yes }
+		}
+
+	}
+	focus = {
+		id = ITA_74
+		text = 西ヨーロッパの社会国家モデル
+		icon = GFX_goal_generic_military_deal
+		cost = 30.00
+		mutually_exclusive = {
+			focus = ITA_1
+			focus = ITA_11
+			focus = ITA_21
+			focus = ITA_63
+		}
+		x = 20
+		y = 0
+		completion_reward = {
+			add_popularity = { ideology = progressivism popularity = 0.55 }
+			set_politics = { ruling_party = progressivism elections_allowed = yes }
+		}
+
+	}
+	focus = {
+		id = ITA_2
+		text = 連盟議会との和解
+		icon = GFX_focus_generic_soviet_politics
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_1
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			add_political_power = 120
+			add_popularity = { ideology = socialismri popularity = 0.3 }
+		}
+
+	}
+	focus = {
+		id = ITA_3
+		text = 過激派の粛清
+		icon = GFX_focus_generic_little_entente
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_1
+		}
+		x = 3
+		y = 1
+		completion_reward = {
+			add_war_support = -0.1
+			add_stability = 0.1
+		}
+
+	}
+	focus = {
+		id = ITA_4
+		text = 海峡の要求
+		icon = GFX_focus_hol_prepare_the_inundation_lines
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_3
+			focus = ITA_2
+		}
+		x = 1
+		y = 2
+		bypass = {
+			797 = { is_owned_by = ITA }
+			451 = { is_owned_by = ITA }
+		}
+		ai_will_do = {
+			factor = 10	
+			modifier = {
+				factor = 0
+				date < 1936.1.1
+			}
+		}	
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			797 = { add_claim_by = ITA }
+			add_named_threat = { threat = 3 name = ITA_demand_Istanbul_threat }
+			if = {
+				limit = {
+					TUR = { 
+						owns_state = 797
+						controls_state = 797 
+					}
+				}
+				TUR = {
+					country_event = { id = Istanbul.1 }
+				}
+			}
+		}
+	}
+	focus = {
+		id = ITA_5
+		text = ラテンの指導者
+		icon = GFX_goal_support_communism
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_3
+			focus = ITA_2
+		}
+		x = 3
+		y = 2
+		completion_reward = {
+			create_faction = "Latin_International"
+		}
+
+	}
+	focus = {
+		id = ITA_6
+		text = 君主主義者への鉄槌
+		icon = GFX_focus_generic_aegean_sea_focus
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_4
+			focus = ITA_5
+		}
+		x = 1
+		y = 3
+		completion_reward = {
+			create_wargoal = {
+				type = topple_government
+				target = TUR
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_7
+		text = イベリア半島の橋頭保
+		icon = GFX_focus_focus_fra_intervention_spain
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_5
+			focus = ITA_4
+		}
+		x = 3
+		y = 3
+		completion_reward = {
+			create_wargoal = {
+				type = topple_government
+				target = SPR
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_8
+		text = ロンドンの不干渉
+		icon = GFX_focus_chi_british_cooperation
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_6
+			focus = ITA_7
+		}
+		x = 1
+		y = 4
+		completion_reward = {
+			add_ideas = OPmod_idea_ITA_2
+		}
+
+	}
+	focus = {
+		id = ITA_9
+		text = 反抗拠点の排除
+		icon = GFX_focus_generic_attack_portugal
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_7
+			focus = ITA_6
+		}
+		x = 3
+		y = 4
+		completion_reward = {
+			create_wargoal = {
+				type = topple_government
+				target = POR
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_12
+		text = 攻勢兵の基本
+		icon = GFX_focus_chi_army_reform
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_11
+		}
+		x = 5
+		y = 1
+		completion_reward = {
+			add_ideas = OPmod_idea_ITA_3
+		}
+
+	}
+	focus = {
+		id = ITA_13
+		text = 科学大の利用
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_11
+		}
+		x = 7
+		y = 1
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+	}
+	focus = {
+		id = ITA_14
+		text = 地方銀行の再編
+		icon = GFX_focus_mex_privatisation
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_13
+			focus = ITA_12
+		}
+		x = 5
+		y = 2
+		completion_reward = {
+			add_ideas = OPmod_idea_ITA_4
+		}
+
+	}
+	focus = {
+		id = ITA_16
+		text = 地中海の守護者
+		icon = GFX_focus_generic_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_14
+		}
+		x = 5
+		y = 3
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = { has_war_with = SLV }
+			SLV = {
+				exists = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			annex_country = { target = SLV transfer_troops = yes }
+		}
+	}
+	focus = {
+		id = ITA_18
+		text = コルシカ作戦
+		icon = GFX_focus_attack_france
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_16
+		}
+		x = 5
+		y = 4
+		
+		will_lead_to_war_with = FRA
+		
+		available = {
+			NOT = { is_in_faction_with = FRA }
+		}
+		
+		completion_reward = {
+			add_political_power = 120
+			add_stability = -0.05
+			declare_war_on = {
+				target = FRA
+				type = take_state_focus
+				generator = { 735 }
+			}
+			add_named_threat = {
+				threat = 5
+				name = threat_ITA_attack_france
+			}
+		}
+		
+		bypass = {
+			OR = {
+				FRA = { exists = no }
+				735 = { owner = { tag = ITA } }
+				is_in_faction_with = FRA
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000
+			
+			modifier = {
+				is_historical_focus_on = no
+				factor = 0.01
+			}
+		}
+	}
+	focus = {
+		id = ITA_15
+		text = 革新的外交戦略
+		icon = GFX_goal_anschluss
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_13
+			focus = ITA_12
+		}
+		x = 7
+		y = 2
+		completion_reward = {
+			create_faction = "Italian_Pact"
+		}
+
+	}
+	focus = {
+		id = ITA_17
+		text = エジプトの支配
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_15
+		}
+		x = 7
+		y = 3
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = EGY
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_19
+		text = 領土返還の保証
+		icon = GFX_focus_generic_befriend_nationalist_spain
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_17
+		}
+		x = 7
+		y = 4
+		completion_reward = {
+			add_ideas = OPmod_idea_ITA_5
+		}
+
+	}
+	focus = {
+		id = ITA_22
+		text = 成人徴兵法
+		icon = GFX_focus_generic_little_entente
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_21
+		}
+		x = 9
+		y = 1
+		completion_reward = {
+			add_ideas = OPmod_idea_ITA_6
+		}
+
+	}
+	focus = {
+		id = ITA_23
+		text = バルカン半島の支配
+		icon = GFX_focus_BUL_free_balkan_states
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_21
+		}
+		x = 11
+		y = 1
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = CRO
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = BOS
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MNT
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = ALB
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = YUG
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MAC
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = BUL
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = ROM
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = AUS
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = TRA
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = HUN
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_24
+		text = 近代的欧州帝国
+		icon = GFX_goal_generic_attack_allies
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_21
+		}
+		x = 13
+		y = 1
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = { has_war_with = SLV }
+			SLV = {
+				exists = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			annex_country = { target = SLV transfer_troops = yes }
+			create_faction = "ImperiumRomanum"
+		}
+	}
+	focus = {
+		id = ITA_25
+		text = 未稼働工場の買収
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_22
+			focus = ITA_23
+			focus = ITA_24
+		}
+		x = 10
+		y = 2
+		completion_reward = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = arms_factory
+				level = 5
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_27
+		text = タラコネンシス奪還
+		icon = GFX_focus_generic_attack_nationalist_spain
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_25
+		}
+		x = 9
+		y = 3
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = SPR
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_26
+		text = 民間企業の工場貸与
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_23
+			focus = ITA_24
+			focus = ITA_22
+		}
+		x = 12
+		y = 2
+		completion_reward = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 5
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_28
+		text = ガリア奪還
+		icon = GFX_focus_attack_france
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_26
+			focus = ITA_25
+		}
+		x = 11
+		y = 3
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = FRA
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_30
+		text = ルシタニアの確保
+		icon = GFX_focus_generic_attack_portugal
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_27
+			focus = ITA_28
+		}
+		x = 10
+		y = 4
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = POR
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_29
+		text = ブリタニア奪還
+		icon = GFX_focus_attack_britain
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_26
+		}
+		x = 13
+		y = 3
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = ENG
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_31
+		text = コンスタンティノープルの再支配
+		icon = GFX_focus_generic_attack_turkey
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_28
+			focus = ITA_29
+		}
+		x = 12
+		y = 4
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = TUR
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_64
+		text = アフリカの開発
+		icon = GFX_focus_generic_africa_naval
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_63
+		}
+		x = 15
+		y = 1
+		completion_reward = {
+			if = { limit = { 449 = { is_owned_and_controlled_by = ITA } }
+				449 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = { limit = { 450 = { is_owned_and_controlled_by = ITA } }
+				450 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = { limit = { 451 = { is_owned_and_controlled_by = ITA } }
+				451 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = { limit = { 662 = { is_owned_and_controlled_by = ITA } }
+				662 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = { limit = { 663 = { is_owned_and_controlled_by = ITA } }
+				663 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ITA_65
+		text = 英伊連合艦隊
+		icon = GFX_focus_chi_british_cooperation
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_63
+		}
+		x = 17
+		y = 1
+		completion_reward = {
+			add_ideas = OPmod_idea_ITA_7
+		}
+
+	}
+	focus = {
+		id = ITA_66
+		text = 王はイタリアの象徴である
+		icon = GFX_goal_tfv_sever_ties_with_uk
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_64
+			focus = ITA_65
+		}
+		mutually_exclusive = {
+			focus = ITA_67
+		}
+		x = 15
+		y = 2
+		completion_reward = {
+			add_popularity = { ideology = despotism popularity = 0.05 }
+			add_war_support = 0.2
+		}
+
+	}
+	focus = {
+		id = ITA_67
+		text = 立憲君主制への移行
+		icon = GFX_focus_rom_royal_dictatorship
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_65
+			focus = ITA_64
+		}
+		mutually_exclusive = {
+			focus = ITA_66
+		}
+		x = 17
+		y = 2
+		completion_reward = {
+			add_popularity = { ideology = despotism popularity = 0.05 }
+			add_stability = 0.2
+		}
+
+	}
+	focus = {
+		id = ITA_68
+		text = 中東との協力体制
+		icon = GFX_focus_generic_befriend_turkey
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_66
+			focus = ITA_67
+		}
+		x = 15
+		y = 3
+		completion_reward = {
+			add_ideas = OPmod_idea_ITA_8
+		}
+
+	}
+	focus = {
+		id = ITA_69
+		text = 防衛戦争に備える
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_67
+			focus = ITA_66
+		}
+		x = 17
+		y = 3
+		completion_reward = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_70
+		text = 西ヨーロッパの保護
+		icon = GFX_focus_generic_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_68
+			focus = ITA_69
+		}
+		x = 15
+		y = 4
+		completion_reward = {
+			diplomatic_relation = {
+				country = HOL
+				relation = guarantee
+				active = yes
+			}
+			add_ai_strategy = {
+				type = support
+				id = "HOL"			
+				value = 200
+			}
+			diplomatic_relation = {
+				country = PRE
+				relation = guarantee
+				active = yes
+			}
+			add_ai_strategy = {
+				type = support
+				id = "PRE"			
+				value = 200
+			}
+			diplomatic_relation = {
+				country = BAY
+				relation = guarantee
+				active = yes
+			}
+			add_ai_strategy = {
+				type = support
+				id = "BAY"			
+				value = 200
+			}
+			diplomatic_relation = {
+				country = SWI
+				relation = guarantee
+				active = yes
+			}
+			add_ai_strategy = {
+				type = support
+				id = "SWI"			
+				value = 200
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_71
+		text = イベリア半島の保護
+		icon = GFX_focus_generic_befriend_nationalist_spain
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_69
+			focus = ITA_68
+		}
+		x = 17
+		y = 4
+		completion_reward = {
+			diplomatic_relation = {
+				country = SPR
+				relation = guarantee
+				active = yes
+			}
+			add_ai_strategy = {
+				type = support
+				id = "SPR"			
+				value = 200
+			}
+			diplomatic_relation = {
+				country = POR
+				relation = guarantee
+				active = yes
+			}
+			add_ai_strategy = {
+				type = support
+				id = "POR"			
+				value = 200
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_75
+		text = 社会保障政策の訂正
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_74
+		}
+		x = 19
+		y = 1
+		completion_reward = {
+			add_stability = 0.15
+		}
+
+	}
+	focus = {
+		id = ITA_76
+		text = 高等教育の推進
+		icon = GFX_focus_generic_military_academy
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_74
+		}
+		x = 21
+		y = 1
+		completion_reward = {
+			add_ideas = OPmod_idea_ITA_9
+		}
+
+	}
+	focus = {
+		id = ITA_77
+		text = 研究機関の統合
+		icon = GFX_focus_research2
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_76
+			focus = ITA_75
+		}
+		x = 19
+		y = 2
+		completion_reward = {
+			add_research_slot = 2
+		}
+
+	}
+	focus = {
+		id = ITA_78
+		text = バルカン半島の監視
+		icon = GFX_focus_BUL_free_balkan_states
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_76
+			focus = ITA_75
+		}
+		x = 21
+		y = 2
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = MNT
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = ALB
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_79
+		text = フランスとの友好
+		icon = GFX_focus_chi_reach_out_to_france
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_77
+			focus = ITA_78
+		}
+		x = 19
+		y = 3
+		completion_reward = {
+			add_popularity = { ideology = socialismri popularity = 0.1 }
+			add_war_support = -0.15
+		}
+
+	}
+	focus = {
+		id = ITA_80
+		text = 再工業化計画
+		icon = GFX_goal_generic_position_armies
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_78
+			focus = ITA_77
+		}
+		x = 21
+		y = 3
+		completion_reward = {
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_81
+		text = イタリア海軍の強化
+		icon = GFX_goal_generic_navy_submarine
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_80
+			focus = ITA_79
+		}
+		x = 19
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_82
+		text = 歩兵の訓練
+		icon = GFX_focus_chi_army_reform
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_80
+			focus = ITA_79
+		}
+		x = 21
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+				}
+		}
+
+	}
+	focus = {
+		id = ITA_36
+		text = 軍用品の生産力確保
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_35
+		}
+		x = 23
+		y = 1
+		completion_reward = {
+			add_building_construction = {
+				type = arms_factory
+				level = 3
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_37
+		text = 民間企業の工場への投資
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_35
+		}
+		x = 25
+		y = 1
+		completion_reward = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_38
+		text = 造船ドックの拡張
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_36
+		}
+		prerequisite = {
+			focus = ITA_37
+		}
+		x = 24
+		y = 2
+		completion_reward = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = naval_base
+				level = 3
+				instant_build = yes
+			}
+		}
+	}
+	focus = {
+		id = ITA_39
+		text = 山岳や森林の開発
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_38
+		}
+		x = 23
+		y = 3
+		completion_reward = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_40
+		text = 一般国債の発行
+		icon = GFX_goal_generic_consumer_goods
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_38
+		}
+		x = 25
+		y = 3
+		completion_reward = {
+			add_ideas = OPmod_idea_ITA_10
+		}
+
+	}
+	focus = {
+		id = ITA_88
+		text = 研究施設の拡張
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_40
+			focus = ITA_39
+		}
+		x = 25
+		y = 4
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+	}
+	focus = {
+		id = ITA_45
+		text = 大口径砲の転用
+		icon = GFX_goal_generic_army_artillery2
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_44
+		}
+		x = 27
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = arty_bonus
+				bonus = 1.0
+				uses = 2
+				category = artillery
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_49
+		text = 砲の共通化
+		icon = GFX_focus_generic_license_production
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_45
+		}
+		x = 27
+		y = 2
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_46
+		text = 軍用自動車の生産
+		icon = GFX_focus_generic_rubber
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_44
+		}
+		x = 29
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				uses = 2
+				category = motorised_infantry
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_50
+		text = 装甲の強化
+		icon = GFX_goal_generic_army_motorized
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_46
+		}
+		x = 29
+		y = 2
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_53
+		text = 航空機設計局の設置
+		icon = GFX_focus_usa_escort_fighters
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_49
+			focus = ITA_50
+		}
+		x = 27
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 1
+				category = light_fighter
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 2
+				category = air_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_89
+		text = 高オクタン価の石油
+		icon = GFX_goal_generic_oil_refinery
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_50
+			focus = ITA_49
+		}
+		available = {
+			ITA = {
+				controls_state = 662
+			}
+		}
+		bypass = {
+			662 = {
+				has_state_flag = sirte_oil_developed
+			}
+		}
+		
+		x = 29
+		y = 3
+		relative_position_id = ITA_italian_highways
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			add_resource = {
+				type = oil
+				amount = 8
+				state = 662
+			}
+			662 = {
+				set_state_flag = sirte_oil_developed
+			}
+		}
+	}
+	focus = {
+		id = ITA_56
+		text = 攻撃機の研究
+		icon = GFX_goal_generic_air_fighter2
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_89
+		}
+		x = 29
+		y = 4
+		completion_reward = {
+
+			add_tech_bonus = {
+				name = ITA_bomber_effort
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+				#technology = tactical_bomber2
+				#technology = tactical_bomber3
+			}
+			add_tech_bonus = {
+				name = ITA_bomber_effort
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+				#technology = CAS2
+				#technology = CAS3
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_47
+		text = 将軍の登用
+		icon = GFX_focus_generic_military_mission
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_44
+		}
+		x = 31
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 2
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 2
+				category = air_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_51
+		text = 陸海空合同作戦の作成
+		icon = GFX_goal_generic_position_armies
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_47
+		}
+		x = 31
+		y = 2
+		completion_reward = {
+			navy_experience = 50
+			army_experience = 50
+			air_experience = 50
+		}
+
+	}
+	focus = {
+		id = ITA_10
+		text = 真の人民の為の政府
+		icon = GFX_focus_attack_france
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_9
+		}
+		prerequisite = {
+			focus = ITA_8
+		}
+		x = 2
+		y = 5
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = FRA
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_20
+		text = ブラジルの開放
+		icon = GFX_focus_por_recover_brazil
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_19
+		}
+		prerequisite = {
+			focus = ITA_18
+		}
+		x = 6
+		y = 5
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = BRA
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_32
+		text = 南米への植民
+		icon = GFX_focus_por_recover_latin_america
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_30
+		}
+		prerequisite = {
+			focus = ITA_31
+		}
+		x = 9
+		y = 5
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = BRA
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = USS
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = COL
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = ECU
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = PRU
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = BOL
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = PAR
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = URG
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = ARG
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = CHL
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = PAN
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = COS
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = NIC
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = HON
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = ELS
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = BLX
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = GUA
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_33
+		text = 新大陸総督府
+		icon = GFX_focus_spa_the_war_of_vengeance
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_30
+		}
+		prerequisite = {
+			focus = ITA_31
+		}
+		x = 11
+		y = 5
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = USA
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MEX
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = CUB
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = JAM
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = HAI
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = DOM
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_34
+		text = インドを越えて
+		icon = GFX_focus_RAJ_all_india_forward_bloc
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_31
+		}
+		prerequisite = {
+			focus = ITA_30
+		}
+		x = 13
+		y = 5
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = FID
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = INS
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = JAR
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_41
+		text = 余剰生産の基本
+		icon = GFX_goal_generic_air_production
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_40
+			focus = ITA_39
+		}
+		x = 23
+		y = 4
+		completion_reward = {
+			add_ideas = OPmod_idea_ITA_11
+		}
+
+	}
+	focus = {
+		id = ITA_42
+		text = 軍用品の生産力確保Ⅱ
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_88
+			focus = ITA_41
+		}
+		x = 23
+		y = 5
+		completion_reward = {
+			add_building_construction = {
+				type = arms_factory
+				level = 3
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_43
+		text = 民間企業の工場への投資Ⅱ
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_88
+			focus = ITA_41
+		}
+		x = 25
+		y = 5
+		completion_reward = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_48
+		text = 歩兵戦力の底上げ
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_44
+		}
+		x = 33
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 2
+				category = land_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_52
+		text = 武装の強化
+		icon = GFX_goal_generic_small_arms
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_48
+		}
+		x = 33
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = ITA_marines_and_landing_craft
+				bonus = 1.0
+				uses = 1
+				category = marine_tech
+				#technology = marines
+				#technology = marines2
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_54
+		text = 航空優勢の死守
+		icon = GFX_goal_generic_air_fighter
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_53
+		}
+		x = 27
+		y = 4
+		completion_reward = {
+
+			add_tech_bonus = {
+				name = ITA_bomber_effort
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+				#technology = tactical_bomber2
+				#technology = tactical_bomber3
+			}
+			add_tech_bonus = {
+				name = ITA_bomber_effort
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+				#technology = CAS2
+				#technology = CAS3
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_55
+		text = 通信装備の更新
+		icon = GFX_goal_generic_radar
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_54
+		}
+		x = 27
+		y = 5
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = radar_tech_bonus
+				bonus = 1.0
+				uses = 2
+				category = radar_tech
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_57
+		text = 航空機の艦載機化
+		icon = GFX_goal_generic_navy_carrier
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_56
+		}
+		x = 29
+		y = 5
+		completion_reward = {
+			air_experience = 25
+
+			add_tech_bonus = {
+				name = naval_air_effort
+				bonus = 1.0
+				uses = 1
+				category = naval_bomber
+				#technology = naval_bomber1
+				#technology = naval_bomber2
+				#technology = naval_bomber3
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_58
+		text = 巡洋艦の再設計
+		icon = GFX_focus_generic_cruiser2
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_51
+			focus = ITA_52
+		}
+		x = 31
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 1.0
+				uses = 2
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_59
+		text = 駆逐艦への技術転用
+		icon = GFX_focus_generic_destroyer
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_58
+		}
+		x = 31
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 1.0
+				ahead_reduction = 1
+				uses = 1
+				category = dd_tech
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_60
+		text = 完全新設計戦艦
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_59
+		}
+		x = 31
+		y = 5
+		completion_reward = {
+			add_tech_bonus = {
+				name = bb_bonus
+				bonus = 1.0
+				uses = 2
+				category = bb_tech
+				category = bc_tech
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_61
+		text = 長航行潜水艦
+		icon = GFX_goal_generic_navy_submarine
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_90
+		}
+		x = 33
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 2
+				category = submarine_doctrine
+				#technology = submarine_operations
+				#technology = undersea_blockade
+				#technology = convoy_interdiction
+				#technology = submarine_offensive
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_62
+		text = 対潜水艦装備
+		icon = GFX_focus_generic_cryptologic_bomb
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_61
+		}
+		x = 33
+		y = 5
+		completion_reward = {
+			add_tech_bonus = {
+				name = ITA_sea_wolves
+				bonus = 2.0
+				uses = 2
+				category = submarine_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_72
+		text = 地中海の警察
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_71
+			focus = ITA_70
+		}
+		x = 15
+		y = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = { has_war_with = SLV }
+			SLV = {
+				exists = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			annex_country = { target = SLV transfer_troops = yes }
+		}
+
+	}
+	focus = {
+		id = ITA_73
+		text = 近代的陸軍
+		icon = GFX_goal_generic_army_tanks
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_71
+			focus = ITA_70
+		}
+		x = 17
+		y = 5
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 2.0
+				uses = 2
+				category = land_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_83
+		text = 西インド進駐
+		icon = GFX_focus_RAJ_two_nation_theory
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_81
+			focus = ITA_82
+		}
+		x = 19
+		y = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = { has_war_with = PAK }
+			PAK = {
+				exists = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			annex_country = { target = PAK transfer_troops = yes }
+		}
+	}
+	focus = {
+		id = ITA_84
+		text = 大西洋への道
+		icon = GFX_focus_generic_attack_portugal
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_82
+			focus = ITA_81
+		}
+		x = 21
+		y = 5
+		completion_reward = {
+			create_wargoal = {
+				type = topple_government
+				target = POR
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = ITA_90
+		text = 柔軟な防衛海軍
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 10.00
+		prerequisite = {
+			focus = ITA_52
+			focus = ITA_51
+		}
+		x = 33
+		y = 3
+		completion_reward = {
+			navy_experience = 100
+			add_tech_bonus = {
+				name = ITA_sea_wolves
+				bonus = 1.0
+				uses = 2
+				category = submarine_doctrine
+			}
+		}
+
+	}
+}

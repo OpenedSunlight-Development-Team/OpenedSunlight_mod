@@ -1,0 +1,18 @@
+state={
+	id=826
+	name="STATE_826"
+	manpower = 34300
+
+	state_category = town
+	
+	history={
+		owner = HUN
+		add_core_of = HUN
+		buildings = {
+			infrastructure = 6
+		}
+	}
+	provinces={
+		3716 6561 11679 
+	}
+}

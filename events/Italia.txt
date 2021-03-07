@@ -1,0 +1,49 @@
+﻿###########################
+# PASTA Events
+###########################
+
+add_namespace = italia
+
+# Claim Istanbul - Turkey Folds
+country_event = {
+	id = italia.22
+	title = italia.22.t
+	desc = italia.22.d
+	picture = GFX_report_event_vienna_award_hungary
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = italia.22.a
+		ITA = { 
+			transfer_state = 797
+			add_state_core = 797
+		}
+		hidden_effect = {
+			country_event = { days = 1 id = news.1 }
+		}
+	}
+}
+
+# Claim Istanbul - Turkey Rejects Demand
+country_event = {
+	id = italia.23
+	title = italia.23.t
+	desc = italia.23.d
+	picture = GFX_report_event_lithuania_army
+
+	is_triggered_only = yes
+	
+	option = {
+		name = italia.23.a
+		create_wargoal = {
+			type = take_state_focus
+			target = TUR
+			generator = { 797 }
+		}
+		hidden_effect = {
+			country_event = { days = 1 id = news.2 }
+		}
+	}
+}
+

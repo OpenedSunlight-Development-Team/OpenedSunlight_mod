@@ -1,0 +1,249 @@
+﻿capital = 16
+
+oob = "FIN_1936"
+
+set_stability = 1
+set_war_support = 1
+
+set_research_slots = 3
+set_fuel_ratio = 1.0
+add_ideas = {
+POR_improved_production
+GER_rebuild_the_nation2
+}
+
+add_ideas = {
+POR_improved_production
+}
+
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_recon = 1
+	tech_engineers = 1
+	motorised_infantry = 1
+	marines  = 1
+	gw_artillery = 1
+	gwtank = 1
+	basic_light_tank = 1
+	#basic_heavy_tank = 1 
+	#basic_medium_tank = 1
+	cv_early_fighter = 1
+	cv_CAS1 = 1
+	cv_naval_bomber1 = 1
+	early_fighter = 1
+	naval_bomber1 = 1
+	early_bomber = 1
+	CAS1 = 1
+	
+	trench_warfare = 1
+	base_strike = 1
+	fuel_silos = 1
+	synth_oil_experiments = 1
+	fuel_refining = 1
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		basic_torpedo = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_heavy_battery = 1
+		basic_medium_battery = 1
+		improved_ship_torpedo_launcher = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		early_ship_hull_carrier = 1
+		basic_ship_hull_carrier = 1
+		mtg_transport = 1
+		coastal_defense_ships = 1
+		basic_secondary_battery = 1
+		basic_depth_charges = 1
+		basic_cruiser_armor_scheme = 1
+		cruiser_submarines = 1
+	}
+	set_naval_oob = "FIN_1936_naval"
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_submarine = 1
+		basic_submarine = 1
+		early_destroyer = 1
+		early_light_cruiser = 1
+		basic_light_cruiser = 1
+		early_heavy_cruiser = 1
+		basic_heavy_cruiser = 1
+		early_battleship = 1
+		basic_battleship = 1
+		early_battlecruiser = 1
+		early_carrier = 1
+		basic_carrier = 1
+		transport = 1
+	}
+	set_naval_oob = "FIN_1936_naval_legacy"
+}
+
+
+set_convoys = 30
+
+
+
+set_politics = {
+	ruling_party = reactionary
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	communism = 5
+	conservatism = 5
+	progressivism = 5
+        fundamentalism = 5
+	reactionary = 56
+	despotism = 4
+	socialismri = 10
+	socialismre = 10
+}
+
+create_country_leader = {
+	name = "Aarne Edward Juutilainen"
+	desc = "POLITICS_Hirohito_DESC"
+	picture = "Aarne Edward Juutilainen.dds"
+	expire = "1989.1.1"
+	ideology = reactionary
+	traits = {
+
+	}
+
+}
+create_country_leader = {
+	name = "eduskunta"
+	desc = "POLITICS_Hirohito_DESC"
+	picture = "eduskunta.dds"
+	expire = "1989.1.1"
+	ideology = conservatism
+	traits = {
+
+	}
+
+}
+
+create_country_leader = {
+	name = "Otto Ville Kuusinen"
+	desc = "POLITICS_Hirohito_DESC"
+
+	expire = "1989.1.1"
+	ideology = communism
+	traits = {
+
+	}
+
+}
+create_country_leader = {
+	name = "Kaarle I"
+	desc = "POLITICS_Hirohito_DESC"
+	picture = "Kaarle I.dds"
+	expire = "1989.1.1"
+	ideology = despotism
+	traits = {
+
+	}
+
+}
+create_country_leader = {
+	name = "Risto Heikki Ryti"
+	desc = "POLITICS_Hirohito_DESC"
+	picture = "Risto Heikki Ryti.dds"
+	expire = "1989.1.1"
+	ideology = progressivism
+	traits = {
+
+	}
+
+}
+create_field_marshal = {
+	name = "Carl Gustaf Emil Mannerheim"
+	picture = "mannneruheimu.dds"
+	traits = { inflexible_strategist war_hero trait_cautious defensive_doctrine trickster winter_specialist }
+	skill = 5
+	id = 58
+	attack_skill = 3
+	defense_skill = 5
+	planning_skill = 5
+	logistics_skill = 3
+}
+create_field_marshal = {
+	name = "Aarne Edward Juutilainen"
+	picture = "Aarne Edward Juutilainen.dds"
+	traits = { war_hero trickster winter_specialist }
+	skill = 5
+	attack_skill = 3
+	defense_skill = 5
+	planning_skill = 5
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Erik Heinrichs"
+	picture = "Erik Heinrichs.dds"
+	traits = { winter_specialist ranger }
+	skill = 4
+    attack_skill = 4
+    defense_skill = 4
+    planning_skill = 3
+    logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Vilho Petter Nenonen"
+	picture = "Vilho Petter Nenonen.dds"
+	traits = { winter_specialist commando }
+	skill = 3
+    attack_skill = 3
+    defense_skill = 1
+    planning_skill = 4
+    logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Wiljo Einar Tuompo"
+	picture = "Wiljo Einar Tuompo.dds"
+
+	skill = 3
+    attack_skill = 3
+    defense_skill = 1
+    planning_skill = 4
+    logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Juho Heiskanen"
+	picture = "Juho Heiskanen.dds"
+
+	skill = 3
+    attack_skill = 3
+    defense_skill = 1
+    planning_skill = 4
+    logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Harald Öhquist"
+	picture = "Harald Öhquist.dds"
+
+	skill = 3
+    attack_skill = 3
+    defense_skill = 1
+    planning_skill = 4
+    logistics_skill = 2
+}

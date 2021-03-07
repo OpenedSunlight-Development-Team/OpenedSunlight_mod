@@ -1,0 +1,2288 @@
+focus_tree = {
+	id = turkey
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = TUR
+		}
+	}
+	default = no
+	focus = {
+		id = TUR_focus_0
+		text = タンジマートの再開
+		icon = GFX_focus_TUR_turanist_ambition
+		cost = 10.00
+		mutually_exclusive = {
+			focus = TUR_focus_3
+		}
+		x = 18
+		y = 0
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_political_power = 120
+				}
+
+	}
+	focus = {
+		id = TUR_focus_2
+		text = オスマン経済の立て直し計画
+		icon = GFX_focus_generic_industry_1
+		cost = 10.00
+		x = 4
+		y = 0
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = { imperial_austerity_idea }
+				}
+
+	}
+	focus = {
+		id = TUR_focus_3
+		text = 統一と進歩
+		icon = GFX_goal_support_democracy
+		cost = 10.00
+		mutually_exclusive = {
+			focus = TUR_focus_0
+		}
+		x = 26
+		y = 0
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_popularity = {
+							ideology = communism
+							popularity = 0.1
+						}
+					add_popularity = {
+							ideology = progressivism
+							popularity = 0.1
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_75
+		text = 伝統的戦術
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 10.00
+		mutually_exclusive = {
+			focus = TUR_focus_76
+		}
+		x = 11
+		y = 0
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					army_experience = 10
+				}
+
+	}
+	focus = {
+		id = TUR_focus_76
+		text = 技術革新
+		icon = GFX_goal_generic_air_production
+		cost = 10.00
+		mutually_exclusive = {
+			focus = TUR_focus_75
+		}
+		x = 13
+		y = 0
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = land_doc_bonus
+							bonus = 1.0
+							uses = 1
+							category = land_doctrine
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_90
+		text = 新時代の砲火
+		icon = GFX_focus_wonderweapons
+		cost = 10.00
+		x = 31
+		y = 0
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = nuclear_bonus
+							ahead_reduction = 2
+							category = nuclear
+						}
+				}
+			ai_will_do = {
+					factor = 1
+					modifier = {
+							factor = 0.25
+							always = yes
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_7
+		text = 経済自由化
+		icon = GFX_focus_SAF_colonialist_crusade
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_2
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_5
+		}
+		x = 2
+		y = 1
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = { USA_privatization }
+				}
+
+	}
+	focus = {
+		id = TUR_focus_16
+		text = 世界の工場
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_7
+		}
+		x = 1
+		y = 2
+			search_filters = { FOCUS_FILTER_INDUSTRY }
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 2
+				}
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = construction_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = industrial_complex
+											size < 1
+											include_locked = yes
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_18
+		text = 経済的自立
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_16
+		}
+		x = 1
+		y = 3
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = { GER_autarky_idea }
+				}
+
+	}
+	focus = {
+		id = TUR_focus_17
+		text = 産業機械の導入
+		icon = GFX_goal_generic_construct_civilian
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_7
+		}
+		x = 3
+		y = 2
+			search_filters = { FOCUS_FILTER_INDUSTRY  FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = industrial_bonus
+							bonus = 1.0
+							uses = 1
+							category = industry
+						}
+				}
+			ai_will_do = {
+					factor = 3
+					modifier = {
+							factor = 0
+							date < 1939.1.1
+							OR = {
+									tag = GXC
+									tag = YUN
+									tag = SHX
+									tag = XSM
+									tag = BEL
+									tag = LUX
+									tag = HOL
+									tag = DEN
+									num_of_controlled_states < 2
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_19
+		text = 工業革命
+		icon = GFX_focus_generic_industry_3
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_17
+		}
+		x = 3
+		y = 3
+			search_filters = { FOCUS_FILTER_INDUSTRY }
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 2
+				}
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = construction_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = industrial_complex
+											size < 1
+											include_locked = yes
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_20
+		text = 研究機関の統一
+		icon = GFX_focus_research2
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_18
+		}
+		prerequisite = {
+			focus = TUR_focus_19
+		}
+		x = 2
+		y = 4
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_research_slot = 1
+				}
+
+	}
+	focus = {
+		id = TUR_focus_21
+		text = 地方格差の解消
+		icon = GFX_focus_GRE_a_land_of_mountains
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_20
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_22
+		}
+		x = 1
+		y = 5
+			search_filters = { FOCUS_FILTER_INDUSTRY }
+			available_if_capitulated = yes
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = infrastructure_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = infrastructure
+											size < 1
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 0
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 1
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 1
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_22
+		text = 軍事産業の活性化
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_20
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_21
+		}
+		x = 3
+		y = 5
+			search_filters = { FOCUS_FILTER_INDUSTRY }
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 2
+				}
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = production_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = arms_factory
+											size < 1
+											include_locked = yes
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_5
+		text = 経済統制の強化
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_2
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_7
+		}
+		x = 6
+		y = 1
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = { TUR_etatism_stabilisation }
+				}
+
+	}
+	focus = {
+		id = TUR_focus_8
+		text = 経済近代化
+		icon = GFX_focus_spa_the_spanish_miracle
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_5
+		}
+		x = 5
+		y = 2
+			search_filters = { FOCUS_FILTER_INDUSTRY  FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = industrial_bonus
+							bonus = 1.0
+							uses = 1
+							category = industry
+						}
+				}
+			ai_will_do = {
+					factor = 3
+					modifier = {
+							factor = 0
+							date < 1939.1.1
+							OR = {
+									tag = GXC
+									tag = YUN
+									tag = SHX
+									tag = XSM
+									tag = BEL
+									tag = LUX
+									tag = HOL
+									tag = DEN
+									num_of_controlled_states < 2
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_12
+		text = 現物交換を禁止
+		icon = GFX_focus_mex_privatisation
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_8
+		}
+		x = 5
+		y = 3
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_research_slot = 1
+				}
+
+	}
+	focus = {
+		id = TUR_focus_9
+		text = オスマン・リラブロック経済
+		icon = GFX_focus_lira
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_5
+		}
+		x = 7
+		y = 2
+
+	}
+	focus = {
+		id = TUR_focus_10
+		text = 黒海経済の掌握
+		icon = GFX_focus_generic_black_sea_focus
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_9
+		}
+		x = 7
+		y = 3
+
+	}
+	focus = {
+		id = TUR_focus_11
+		text = 中東へのオスマンリラ普及
+		icon = GFX_focus_TUR_taking_over_defense_of_the_gulf
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_10
+		}
+		x = 5
+		y = 4
+
+	}
+	focus = {
+		id = TUR_focus_13
+		text = 東欧へのオスマンリラ普及
+		icon = GFX_focus_spr_anarchism_knows_no_borders
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_10
+		}
+		x = 7
+		y = 4
+
+	}
+	focus = {
+		id = TUR_focus_14
+		text = エーゲ経済圏の主導権
+		icon = GFX_focus_GRE_bedrock_of_balkan_stability
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_11
+		}
+		prerequisite = {
+			focus = TUR_focus_13
+		}
+		x = 6
+		y = 5
+
+	}
+	focus = {
+		id = TUR_focus_77
+		text = 精神的優越
+		icon = GFX_focus_generic_manpower
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_75
+		}
+		x = 11
+		y = 1
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = { JAP_superior_will }
+				}
+
+	}
+	focus = {
+		id = TUR_focus_83
+		text = ドクトリン研究
+		icon = GFX_goal_generic_army_doctrines
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_77
+		}
+		x = 10
+		y = 2
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = land_doc_bonus
+							bonus = 1.0
+							uses = 1
+							category = land_doctrine
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_84
+		text = 特殊部隊
+		icon = GFX_focus_eng_special_air_service
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_83
+		}
+		x = 10
+		y = 3
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = special_forces
+					add_tech_bonus = {
+							name = special_forces_bonus
+							bonus = 1.0
+							uses = 1
+							technology = paratroopers
+							technology = paratroopers2
+							technology = marines
+							technology = marines2
+							technology = tech_mountaineers
+							technology = tech_mountaineers2
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_78
+		text = 技術的優越
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_76
+		}
+		x = 13
+		y = 1
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = { acy_of_technology }
+				}
+
+	}
+	focus = {
+		id = TUR_focus_79
+		text = 歩兵銃の更新
+		icon = GFX_goal_generic_small_arms
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_77
+			focus = TUR_focus_78
+		}
+		x = 12
+		y = 2
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = infantry_artillery_bonus
+							bonus = 1.0
+							uses = 1
+							category = infantry_weapons
+							category = artillery
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_80
+		text = 砲の更新
+		icon = GFX_goal_generic_army_artillery2
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_79
+		}
+		x = 12
+		y = 3
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = infantry_artillery_bonus
+							ahead_reduction = 2
+							uses = 1
+							category = infantry_weapons
+							category = artillery
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_81
+		text = 空軍の運用
+		icon = GFX_goal_generic_air_fighter2
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_78
+		}
+		x = 14
+		y = 2
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			complete_tooltip = {
+					air_experience = 25
+					if = {
+							limit = {
+									has_country_flag = aviation_effort_AB
+								}
+							add_building_construction = {
+									type = air_base
+									level = 2
+									instant_build = yes
+								}
+						}
+					add_tech_bonus = {
+							name = air_doc_bonus
+							bonus = 1.0
+							uses = 1
+							category = air_doctrine
+						}
+				}
+			completion_reward = {
+					air_experience = 25
+					if = {
+							limit = {
+									capital_scope = {
+											NOT = {
+													free_building_slots = {
+															building = air_base
+															size > 1
+														}
+												}
+										}
+								}
+							random_owned_controlled_state = {
+									limit = {
+											free_building_slots = {
+													building = air_base
+													size > 1
+												}
+										}
+									add_building_construction = {
+											type = air_base
+											level = 2
+											instant_build = yes
+										}
+									ROOT = {
+											set_country_flag = aviation_effort_AB
+										}
+								}
+						}
+					if = {
+							limit = {
+									capital_scope = {
+											free_building_slots = {
+													building = air_base
+													size > 1
+												}
+										}
+								}
+							capital_scope = {
+									add_building_construction = {
+											type = air_base
+											level = 2
+											instant_build = yes
+										}
+									ROOT = {
+											set_country_flag = aviation_effort_AB
+										}
+								}
+						}
+					add_tech_bonus = {
+							name = air_doc_bonus
+							bonus = 1.0
+							uses = 1
+							category = air_doctrine
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_82
+		text = 戦車計画
+		icon = GFX_focus_generic_tank_production
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_81
+		}
+		x = 14
+		y = 3
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = armor_bonus
+							bonus = 1.0
+							uses = 2
+							category = armor
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_85
+		text = 海軍技術
+		icon = GFX_TUR_navy1
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_84
+			focus = TUR_focus_82
+		}
+		x = 12
+		y = 4
+			search_filters = { FOCUS_FILTER_INDUSTRY }
+			available_if_capitulated = yes
+			available = {
+					any_state = {
+							is_coastal = yes
+							is_controlled_by = ROOT
+						}
+				}
+			complete_tooltip = {
+					navy_experience = 25
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+							type = dockyard
+							level = 3
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					navy_experience = 25
+					if = {
+							limit = {
+									NOT = {
+											any_owned_state = {
+													dockyard > 0
+													free_building_slots = {
+															building = dockyard
+															size > 2
+															include_locked = yes
+														}
+												}
+										}
+									any_owned_state = {
+											is_coastal = yes
+										}
+								}
+							random_owned_controlled_state = {
+									limit = {
+											is_coastal = yes
+											free_building_slots = {
+													building = dockyard
+													size > 2
+													include_locked = yes
+												}
+										}
+									add_extra_state_shared_building_slots = 3
+									add_building_construction = {
+											type = dockyard
+											level = 3
+											instant_build = yes
+										}
+								}
+							set_country_flag = naval_effort_built
+						}
+					if = {
+							limit = {
+									NOT = {
+											has_country_flag = naval_effort_built
+										}
+									any_owned_state = {
+											dockyard > 0
+											free_building_slots = {
+													building = dockyard
+													size > 2
+													include_locked = yes
+												}
+										}
+								}
+							random_owned_controlled_state = {
+									limit = {
+											dockyard > 0
+											free_building_slots = {
+													building = dockyard
+													size > 2
+													include_locked = yes
+												}
+										}
+									add_extra_state_shared_building_slots = 3
+									add_building_construction = {
+											type = dockyard
+											level = 3
+											instant_build = yes
+										}
+								}
+							set_country_flag = naval_effort_built
+						}
+					if = {
+							limit = {
+									NOT = {
+											has_country_flag = naval_effort_built
+										}
+									NOT = {
+											any_owned_state = {
+													free_building_slots = {
+															building = dockyard
+															size > 2
+															include_locked = yes
+														}
+												}
+										}
+								}
+							random_state = {
+									limit = {
+											controller = {
+													tag = ROOT
+												}
+											free_building_slots = {
+													building = dockyard
+													size > 2
+													include_locked = yes
+												}
+										}
+									add_extra_state_shared_building_slots = 3
+									add_building_construction = {
+											type = dockyard
+											level = 3
+											instant_build = yes
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_86
+		text = コジャテペ級駆逐艦
+		icon = GFX_focus_generic_destroyer
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_85
+		}
+		x = 10
+		y = 5
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 1
+					modifier = {
+							factor = 0
+							all_owned_state = {
+									OR = {
+											is_coastal = no
+											dockyard < 1
+										}
+								}
+						}
+				}
+			completion_reward = {
+					add_tech_bonus = {
+							name = dd_bonus
+							bonus = 1.0
+							ahead_reduction = 2
+							uses = 1
+							category = dd_tech
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_87
+		text = ペイキ・シェヴケト級巡洋艦
+		icon = GFX_focus_generic_cruiser2
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_85
+		}
+		x = 14
+		y = 5
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 1
+					modifier = {
+							factor = 0
+							all_owned_state = {
+									OR = {
+											is_coastal = no
+											dockyard < 1
+										}
+								}
+						}
+				}
+			completion_reward = {
+					add_tech_bonus = {
+							name = cr_bonus
+							bonus = 1.0
+							ahead_reduction = 2
+							uses = 1
+							category = cl_tech
+							category = ca_tech
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_15
+		text = カリフの権限強化
+		icon = GFX_focus_TUR_loosen_the_laws_on_secularism
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_0
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_1
+		}
+		x = 17
+		y = 1
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_political_power = 1200
+					add_stability = -0.15
+				}
+
+	}
+	focus = {
+		id = TUR_focus_55
+		text = メフメト6世の野望
+		icon = GFX_focus_mefmet
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_15
+		}
+		x = 17
+		y = 2
+
+	}
+	focus = {
+		id = TUR_focus_33
+		text = 青年トルコ委員会の弾圧
+		icon = GFX_focus_TUR_misak_i_milli
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_55
+		}
+		x = 17
+		y = 3
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_stability = -0.5
+					add_popularity = {
+							ideology = progressivism
+							popularity = -0.5
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_34
+		text = 軍国主義
+		icon = GFX_goal_generic_political_pressure
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_33
+		}
+		x = 17
+		y = 4
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = { militarism_focus }
+				}
+
+	}
+	focus = {
+		id = TUR_focus_1
+		text = ミドハト憲法の再公布
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_0
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_15
+		}
+		x = 19
+		y = 1
+
+	}
+	focus = {
+		id = TUR_focus_29
+		text = 議会への権限委譲
+		icon = GFX_focus_spa_save_the_alcazar
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_1
+		}
+		x = 19
+		y = 2
+			available_if_capitulated = yes
+			completion_reward = {
+					add_popularity = {
+							ideology = conservatism
+							popularity = 0.3
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_30
+		text = 政教分離の推進
+		icon = GFX_focus_spr_crush_the_revolution
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_29
+		}
+		x = 19
+		y = 3
+
+	}
+	focus = {
+		id = TUR_focus_31
+		text = 議会君主制への移行
+		icon = GFX_focus_generic_diplomatic_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_30
+		}
+		x = 19
+		y = 4
+			available_if_capitulated = yes
+			completion_reward = {
+					add_popularity = {
+							ideology = conservatism
+							popularity = 0.3
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_41
+		text = 共産主義者同盟を攻撃
+		icon = GFX_focus_spr_class_war
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_34
+			focus = TUR_focus_31
+		}
+		x = 18
+		y = 5
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_popularity = {
+							ideology = communism
+							popularity = -0.5
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_45
+		text = 反世俗主義
+		icon = GFX_focus_rom_parties_end
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_41
+		}
+		prerequisite = {
+			focus = TUR_focus_34
+		}
+		x = 16
+		y = 6
+
+	}
+	focus = {
+		id = TUR_focus_46
+		text = 中東の春
+		icon = GFX_focus_TUR_treaty_of_saadabad
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_41
+		}
+		prerequisite = {
+			focus = TUR_focus_31
+		}
+		x = 20
+		y = 6
+
+	}
+	focus = {
+		id = TUR_focus_58
+		text = シリア・ヨルダンの解放要求
+		icon = GFX_focus_TUR_support_the_golden_square
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_46
+		}
+		x = 20
+		y = 7
+
+	}
+	focus = {
+		id = TUR_focus_64
+		text = 北アフリカの独立支援
+		icon = GFX_focus_secret_rearmament
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_58
+		}
+		x = 20
+		y = 8
+
+	}
+	focus = {
+		id = TUR_focus_65
+		text = 民族自決の精神
+		icon = GFX_focus_TUR_the_sun_language_theory
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_64
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_67
+		}
+		x = 19
+		y = 9
+
+	}
+	focus = {
+		id = TUR_focus_4
+		text = 青年トルコ人
+		icon = GFX_focus_tur
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_3
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_6
+		}
+		x = 25
+		y = 1
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_popularity = {
+							ideology = progressivism
+							popularity = 0.1
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_23
+		text = ギリシャ民族問題
+		icon = GFX_focus_GRE_resurrecting_the_megali_idea
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_1
+			focus = TUR_focus_4
+		}
+		x = 22
+		y = 2
+
+	}
+	focus = {
+		id = TUR_focus_24
+		text = 独立勢力の弾圧
+		icon = GFX_goal_generic_major_war
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_23
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_25
+		}
+		x = 21
+		y = 3
+
+	}
+	focus = {
+		id = TUR_focus_27
+		text = メガリ・イデアを破壊
+		icon = GFX_goal_tfv_can_forced_quebec_conscription
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_24
+		}
+		x = 21
+		y = 4
+
+	}
+	focus = {
+		id = TUR_focus_25
+		text = 独立勢力との接触
+		icon = GFX_goal_generic_military_deal
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_23
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_24
+		}
+		x = 23
+		y = 3
+
+	}
+	focus = {
+		id = TUR_focus_26
+		text = ギリシャ独立の約束
+		icon = GFX_goal_tfv_can_compromise_with_quebec
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_25
+		}
+		x = 23
+		y = 4
+
+	}
+	focus = {
+		id = TUR_focus_28
+		text = 独自海軍技術の取得
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_27
+			focus = TUR_focus_26
+		}
+		x = 22
+		y = 5
+			search_filters = { FOCUS_FILTER_INDUSTRY }
+			available_if_capitulated = yes
+			available = {
+					any_state = {
+							is_coastal = yes
+							is_controlled_by = ROOT
+						}
+				}
+			complete_tooltip = {
+					navy_experience = 25
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+							type = dockyard
+							level = 3
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					navy_experience = 25
+					if = {
+							limit = {
+									NOT = {
+											any_owned_state = {
+													dockyard > 0
+													free_building_slots = {
+															building = dockyard
+															size > 2
+															include_locked = yes
+														}
+												}
+										}
+									any_owned_state = {
+											is_coastal = yes
+										}
+								}
+							random_owned_controlled_state = {
+									limit = {
+											is_coastal = yes
+											free_building_slots = {
+													building = dockyard
+													size > 2
+													include_locked = yes
+												}
+										}
+									add_extra_state_shared_building_slots = 3
+									add_building_construction = {
+											type = dockyard
+											level = 3
+											instant_build = yes
+										}
+								}
+							set_country_flag = naval_effort_built
+						}
+					if = {
+							limit = {
+									NOT = {
+											has_country_flag = naval_effort_built
+										}
+									any_owned_state = {
+											dockyard > 0
+											free_building_slots = {
+													building = dockyard
+													size > 2
+													include_locked = yes
+												}
+										}
+								}
+							random_owned_controlled_state = {
+									limit = {
+											dockyard > 0
+											free_building_slots = {
+													building = dockyard
+													size > 2
+													include_locked = yes
+												}
+										}
+									add_extra_state_shared_building_slots = 3
+									add_building_construction = {
+											type = dockyard
+											level = 3
+											instant_build = yes
+										}
+								}
+							set_country_flag = naval_effort_built
+						}
+					if = {
+							limit = {
+									NOT = {
+											has_country_flag = naval_effort_built
+										}
+									NOT = {
+											any_owned_state = {
+													free_building_slots = {
+															building = dockyard
+															size > 2
+															include_locked = yes
+														}
+												}
+										}
+								}
+							random_state = {
+									limit = {
+											controller = {
+													tag = ROOT
+												}
+											free_building_slots = {
+													building = dockyard
+													size > 2
+													include_locked = yes
+												}
+										}
+									add_extra_state_shared_building_slots = 3
+									add_building_construction = {
+											type = dockyard
+											level = 3
+											instant_build = yes
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_6
+		text = 第三の道
+		icon = GFX_focus_focus_fra_revolution_upmost
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_3
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_4
+		}
+		x = 27
+		y = 1
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_popularity = {
+							ideology = communism
+							popularity = 0.1
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_35
+		text = 専制打倒デモ
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_4
+			focus = TUR_focus_6
+		}
+		x = 26
+		y = 2
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_popularity = {
+							ideology = despotism
+							popularity = -0.3
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_36
+		text = ムスタファ・ケマルのクーデター
+		icon = GFX_focus_kemal
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_4
+		}
+		prerequisite = {
+			focus = TUR_focus_35
+		}
+		x = 25
+		y = 3
+			completion_reward = {
+					add_ideas = { mutiny_1 }
+					add_popularity = {
+							ideology = progressivism
+							popularity = 0.3
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_37
+		text = 世俗国家の樹立
+		icon = GFX_focus_generic_befriend_turkey
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_36
+		}
+		x = 25
+		y = 4
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_popularity = {
+							ideology = progressivism
+							popularity = 0.3
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_38
+		text = 大規模ストの決行
+		icon = GFX_focus_prc_agrarian_socialism
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_35
+		}
+		prerequisite = {
+			focus = TUR_focus_6
+		}
+		x = 27
+		y = 3
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = { strikes_1 }
+					add_popularity = {
+							ideology = communism
+							popularity = 0.3
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_40
+		text = 人民戦線
+		icon = GFX_focus_BUL_destroy_the_zveno
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_38
+		}
+		x = 27
+		y = 4
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_popularity = {
+							ideology = communism
+							popularity = 0.3
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_39
+		text = 祖国解放戦争
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_37
+			focus = TUR_focus_40
+		}
+		x = 26
+		y = 5
+			search_filters = { FOCUS_FILTER_POLITICAL }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_popularity = {
+							ideology = communism
+							popularity = 0.1
+						}
+					add_popularity = {
+							ideology = progressivism
+							popularity = 0.1
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_43
+		text = イギリスとの友好
+		icon = GFX_focus_chi_british_cooperation
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_39
+		}
+		prerequisite = {
+			focus = TUR_focus_37
+		}
+		x = 24
+		y = 6
+
+	}
+	focus = {
+		id = TUR_focus_47
+		text = 反共包囲網に参加
+		icon = GFX_focus_ger_bulwark_against_bolshevism
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_43
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_48
+		}
+		x = 23
+		y = 7
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = { JAP_anti_communist_volunteers }
+				}
+
+	}
+	focus = {
+		id = TUR_focus_42
+		text = フランスとの友好
+		icon = GFX_focus_chi_reach_out_to_france
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_39
+		}
+		prerequisite = {
+			focus = TUR_focus_40
+		}
+		x = 28
+		y = 6
+
+	}
+	focus = {
+		id = TUR_focus_51
+		text = ロシアとの友好
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_42
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_52
+		}
+		x = 27
+		y = 7
+
+	}
+	focus = {
+		id = TUR_focus_53
+		text = 第三インターナショナル
+		icon = GFX_focus_ger_great_red_menace
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_51
+		}
+		x = 27
+		y = 8
+
+	}
+	focus = {
+		id = TUR_focus_52
+		text = クリミアの安全保障
+		icon = GFX_focus_invite_yugoslavia
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_42
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_51
+		}
+		x = 29
+		y = 7
+
+	}
+	focus = {
+		id = TUR_focus_54
+		text = ロシアを破壊
+		icon = GFX_focus_ger_strike_at_the_source
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_52
+		}
+		x = 29
+		y = 8
+
+	}
+	focus = {
+		id = TUR_focus_72
+		text = 政治的正当性
+		icon = GFX_focus_eng_crush_the_dream
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_53
+			focus = TUR_focus_54
+		}
+		x = 27
+		y = 9
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = { idea_political_correctness }
+				}
+
+	}
+	focus = {
+		id = TUR_focus_91
+		text = ニュークリア・シェアリング
+		icon = GFX_goal_generic_fortify_city
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_90
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_93
+		}
+		x = 30
+		y = 1
+
+	}
+	focus = {
+		id = TUR_focus_92
+		text = 核抑止力の追求
+		icon = GFX_goal_generic_attack_allies
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_91
+		}
+		x = 30
+		y = 2
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = nuclear_bonus
+							ahead_reduction = 2
+							category = nuclear
+						}
+				}
+			ai_will_do = {
+					factor = 1
+					modifier = {
+							factor = 0.25
+							always = yes
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_32
+		text = パクス・オトマニカ
+		icon = GFX_focus_TUR_pivot_to_the_past
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_61
+		}
+		prerequisite = {
+			focus = TUR_focus_63
+		}
+		x = 16
+		y = 10
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = { TUR_victory_at_all_costs }
+				}
+
+	}
+	focus = {
+		id = TUR_focus_44
+		text = 日本への海軍艦艇派遣
+		icon = GFX_focus_jap_pacific_guardian
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_28
+		}
+		x = 22
+		y = 6
+
+	}
+	focus = {
+		id = TUR_focus_48
+		text = 親欧中立体制
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_43
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_47
+		}
+		x = 25
+		y = 7
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = { neutrality_idea }
+				}
+
+	}
+	focus = {
+		id = TUR_focus_49
+		text = 戦争抑止政策
+		icon = GFX_goal_generic_military_sphere
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_48
+		}
+		x = 25
+		y = 8
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = { deterrence }
+				}
+
+	}
+	focus = {
+		id = TUR_focus_50
+		text = ウクライナを攻撃
+		icon = GFX_goal_generic_more_territorial_claims
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_47
+		}
+		x = 23
+		y = 8
+
+	}
+	focus = {
+		id = TUR_focus_56
+		text = 自治領の併合
+		icon = GFX_focus_generic_self_management
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_41
+		}
+		x = 18
+		y = 6
+
+	}
+	focus = {
+		id = TUR_focus_57
+		text = アラビア半島国家への最後通牒
+		icon = GFX_goal_generic_territory_or_war
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_45
+		}
+		x = 16
+		y = 7
+
+	}
+	focus = {
+		id = TUR_focus_59
+		text = 北アフリカ植民地の要求
+		icon = GFX_focus_generic_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_57
+		}
+		x = 18
+		y = 8
+
+	}
+	focus = {
+		id = TUR_focus_60
+		text = ペルシア侵攻
+		icon = GFX_focus_generic_provoke_border_clashes
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_57
+		}
+		x = 16
+		y = 8
+
+	}
+	focus = {
+		id = TUR_focus_61
+		text = バルカンへの進出
+		icon = GFX_focus_YUG_dissolve_serbia
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_62
+		}
+		prerequisite = {
+			focus = TUR_focus_60
+		}
+		x = 15
+		y = 9
+
+	}
+	focus = {
+		id = TUR_focus_62
+		text = 北部共産同盟の破壊
+		icon = GFX_focus_GRE_stage_an_incident_in_the_bosporus
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_57
+		}
+		x = 14
+		y = 8
+
+	}
+	focus = {
+		id = TUR_focus_63
+		text = 極東航海
+		icon = GFX_focus_GRE_a_long_and_proud_tradition
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_60
+		}
+		prerequisite = {
+			focus = TUR_focus_59
+		}
+		x = 17
+		y = 9
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = { POR_endless_sea }
+				}
+
+	}
+	focus = {
+		id = TUR_focus_66
+		text = アナトリア・アラビア連邦
+		icon = GFX_focus_focus_fra_fascist_threat
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_67
+		}
+		x = 21
+		y = 10
+
+	}
+	focus = {
+		id = TUR_focus_67
+		text = 民族統治機構
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_64
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_65
+		}
+		x = 21
+		y = 9
+
+	}
+	focus = {
+		id = TUR_focus_68
+		text = バグダート条約
+		icon = GFX_focus_TUR_reform_the_balkan_pact
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_65
+		}
+		x = 19
+		y = 10
+
+	}
+	focus = {
+		id = TUR_focus_69
+		text = 前哨戦
+		icon = GFX_focus_usa_focus_on_europe
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_50
+		}
+		x = 23
+		y = 9
+
+	}
+	focus = {
+		id = TUR_focus_70
+		text = フランスを攻撃
+		icon = GFX_focus_attack_france
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_69
+		}
+		x = 23
+		y = 10
+
+	}
+	focus = {
+		id = TUR_focus_71
+		text = ソビエト政府の打倒
+		icon = GFX_focus_attack_soviet
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_50
+		}
+		x = 25
+		y = 9
+
+	}
+	focus = {
+		id = TUR_focus_73
+		text = イギリスとの戦争
+		icon = GFX_focus_generic_strike_at_democracy2
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_72
+		}
+		x = 28
+		y = 10
+
+	}
+	focus = {
+		id = TUR_focus_74
+		text = アメリカとの戦争
+		icon = GFX_focus_generic_strike_at_democracy3
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_72
+		}
+		x = 26
+		y = 10
+
+	}
+	focus = {
+		id = TUR_focus_88
+		text = スルタン・メフメト・レシャド級戦艦
+		icon = GFX_focus_generic_navy_battleship2
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_85
+		}
+		x = 12
+		y = 5
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 1
+					modifier = {
+							factor = 0
+							all_owned_state = {
+									OR = {
+											is_coastal = no
+											dockyard < 1
+										}
+								}
+						}
+				}
+			completion_reward = {
+					navy_experience = 25
+					add_tech_bonus = {
+							name = capital_ships_bonus
+							bonus = 1.0
+							ahead_reduction = 2
+							uses = 1
+							category = bc_tech
+							category = bb_tech
+							category = cv_tech
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_89
+		text = トルコ海軍航空隊
+		icon = GFX_TUR_navy2
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_86
+			focus = TUR_focus_88
+			focus = TUR_focus_87
+		}
+		x = 12
+		y = 6
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = nav_bomber_bonus
+							bonus = 1.0
+							ahead_reduction = 2
+							uses = 1
+							category = naval_bomber
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_93
+		text = 核開発計画
+		icon = GFX_goal_continuous_research
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_90
+		}
+		mutually_exclusive = {
+			focus = TUR_focus_91
+		}
+		x = 32
+		y = 1
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = nuclear_bonus
+							ahead_reduction = 2
+							category = nuclear
+						}
+				}
+			ai_will_do = {
+					factor = 1
+					modifier = {
+							factor = 0.25
+							always = yes
+						}
+				}
+
+	}
+	focus = {
+		id = TUR_focus_94
+		text = 弾道ミサイル研究
+		icon = GFX_focus_rocketry
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_93
+		}
+		x = 32
+		y = 2
+			search_filters = { FOCUS_FILTER_RESEARCH }
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = jet_rocket_bonus
+							ahead_reduction = 2
+							uses = 2
+							category = rocketry
+							category = jet_technology
+						}
+				}
+			ai_will_do = {
+					factor = 1
+					modifier = {
+							factor = 0.25
+							always = yes
+						}
+				}
+
+	}
+	focus = {
+		id = Extinction
+		text = 地上の太陽
+		icon = GFX_focus_generic_attack_turkey
+		cost = 10.00
+		prerequisite = {
+			focus = TUR_focus_94
+		}
+		x = 32
+		y = 3
+			war = text
+			= = 地上の太陽
+
+	}
+}

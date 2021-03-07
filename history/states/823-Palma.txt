@@ -1,0 +1,28 @@
+state=
+{
+	id=823
+	name="STATE_823"
+	manpower = 382900
+	
+	state_category = city
+
+	history=
+	{
+		owner = SLV
+		add_core_of = SLV
+		victory_points = {
+			9793 3
+		}
+		buildings = {
+			infrastructure = 7
+			air_base = 1
+			9793 = {
+				naval_base = 2
+			}
+		}
+
+	}
+	provinces=
+	{
+9793 	}
+}

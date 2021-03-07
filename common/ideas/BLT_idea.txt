@@ -1,0 +1,56 @@
+ideas = {
+
+	country = {
+
+		OPmod_idea_BLT_0 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                consumer_goods_factor = -0.15
+			}
+		}
+		OPmod_idea_BLT_1 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                land_equipment_upgrade_xp_cost = -0.25
+                                planning_speed = 0.10
+			}
+		}
+		OPmod_idea_BLT_2 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                industrial_capacity_factory = 0.1
+                                conscription = 0.03
+			}
+		}
+
+}

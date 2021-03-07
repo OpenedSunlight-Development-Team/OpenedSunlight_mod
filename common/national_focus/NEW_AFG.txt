@@ -1,0 +1,503 @@
+focus_tree = {
+	id = NEW_AFG
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = AFG
+		}
+	}
+	default = no
+	focus = {
+		id = AFG_NEW_1
+		text = 軍事組織の利用
+		icon = GFX_goal_generic_small_arms
+		cost = 10.00
+		x = 6
+		y = 0
+		completion_reward = {
+			add_political_power = 100
+			add_stability = -0.05
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_ef
+		text = 軍事方針
+		icon = GFX_focus_generic_strike_at_democracy1
+		cost = 10.00
+		x = 14
+		y = 0
+		completion_reward = {
+			navy_experience = 50
+			army_experience = 50
+			air_experience = 50
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_2
+		text = 労働者優先
+		icon = GFX_goal_support_communism
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_1
+		}
+		mutually_exclusive = {
+			focus = AFG_NEW_3
+			focus = AFG_NEW_4
+			focus = AFG_NEW_3
+		}
+		x = 2
+		y = 1
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.6 }
+			set_politics = { ruling_party = communism elections_allowed = yes }
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_5
+		text = フランスへ外交官を派遣
+		icon = GFX_focus_chi_reach_out_to_france
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_2
+		}
+		x = 1
+		y = 2
+		completion_reward = {
+			add_war_support = 0.08
+			add_popularity = { ideology = socialismri popularity = 0.2 }
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_6
+		text = 労働管理法
+		icon = GFX_focus_generic_soviet_politics
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_2
+		}
+		x = 3
+		y = 2
+		completion_reward = {
+			add_ideas = OPmod_idea_AFG_1
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_7
+		text = 軍需工場の建設
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_5
+		}
+		prerequisite = {
+			focus = AFG_NEW_6
+		}
+		x = 2
+		y = 3
+		completion_reward = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_3
+		text = 中立主義的政府
+		icon = GFX_goal_support_democracy
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_1
+		}
+		mutually_exclusive = {
+			focus = AFG_NEW_2
+			focus = AFG_NEW_2
+			focus = AFG_NEW_4
+		}
+		x = 6
+		y = 1
+		completion_reward = {
+			add_popularity = { ideology = progressivism popularity = 0.6 }
+			set_politics = { ruling_party = progressivism elections_allowed = yes }
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_8
+		text = カブール議定書
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_3
+		}
+		x = 6
+		y = 2
+		completion_reward = {
+			add_ideas = OPmod_idea_AFG_2
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_14
+		text = 中東の中立国
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_8
+		}
+		x = 4
+		y = 3
+		completion_reward = {
+			add_ideas = OPmod_idea_AFG_3
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_16
+		text = 地方銀行の廃止
+		icon = GFX_focus_mex_privatisation
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_8
+		}
+		x = 6
+		y = 3
+		completion_reward = {
+			add_ideas = OPmod_idea_AFG_4
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_10
+		text = 工業会社への投資
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_8
+		}
+		x = 8
+		y = 3
+		completion_reward = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_4
+		text = 国家優先
+		icon = GFX_goal_support_fascism
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_1
+		}
+		mutually_exclusive = {
+			focus = AFG_NEW_2
+			focus = AFG_NEW_3
+		}
+		x = 10
+		y = 1
+		completion_reward = {
+			add_popularity = { ideology = reactionary popularity = 0.6 }
+			set_politics = { ruling_party = reactionary elections_allowed = yes }
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_11
+		text = 共産主義者の追放
+		icon = GFX_focus_generic_manpower
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_4
+		}
+		x = 9
+		y = 2
+		completion_reward = {
+			add_stability = -0.1
+			add_popularity = { ideology = socialismri popularity = -0.9 }
+			add_popularity = { ideology = communism popularity = -0.9 }
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_12
+		text = ロシア企業との連携
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_4
+		}
+		x = 11
+		y = 2
+		completion_reward = {
+			add_ideas = OPmod_idea_AFG_4
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_13
+		text = 化学開発機構
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_11
+		}
+		prerequisite = {
+			focus = AFG_NEW_12
+		}
+		x = 10
+		y = 3
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_ht
+		text = 陸軍司令官による作戦
+		icon = GFX_goal_generic_small_arms
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_ef
+		}
+		x = 13
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+				}
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_hy
+		text = 航空戦力の貯蓄
+		icon = GFX_goal_generic_air_fighter
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_ef
+		}
+		x = 15
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 1
+				category = light_fighter
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_23
+		text = 安定した兵器開発
+		icon = GFX_goal_generic_scientific_exchange
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_ht
+			focus = AFG_NEW_hy
+		}
+		x = 14
+		y = 2
+		completion_reward = {
+			add_ideas = OPmod_idea_AFG_5
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_24
+		text = 無線通信による指令
+		icon = GFX_goal_generic_radar
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_23
+		}
+		x = 13
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				name = radar_tech_bonus
+				bonus = 1.0
+				uses = 2
+				category = radar_tech
+			}
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_15
+		text = 正規軍の再編成
+		icon = GFX_focus_chi_army_reform
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_14
+			focus = AFG_NEW_10
+			focus = AFG_NEW_16
+		}
+		x = 6
+		y = 4
+		completion_reward = {
+			add_ideas = OPmod_idea_AFG_6
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_17
+		text = 農業開発の奨励
+		icon = GFX_goal_generic_construction2
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_7
+		}
+		x = 1
+		y = 4
+		completion_reward = {
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_18
+		text = 政府へ軍の管轄を移行
+		icon = GFX_focus_focus_fra_maquis
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_7
+		}
+		x = 3
+		y = 4
+		completion_reward = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+				}
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_19
+		text = 軍事作戦の統合
+		icon = GFX_goal_generic_position_armies
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_13
+		}
+		x = 9
+		y = 4
+		completion_reward = {
+			add_ideas = OPmod_idea_AFG_7
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_30
+		text = 徴兵法の改定
+		icon = GFX_focus_generic_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_13
+		}
+		x = 11
+		y = 4
+		completion_reward = {
+			add_ideas = OPmod_idea_AFG_8
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_25
+		text = 戦闘機搭載機関銃
+		icon = GFX_goal_generic_air_bomber
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_23
+		}
+		x = 15
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 2
+				category = light_fighter
+			}
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_26
+		text = 潜水艦の開発
+		icon = GFX_goal_generic_navy_submarine
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_25
+			focus = AFG_NEW_24
+		}
+		x = 15
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 2.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+
+	}
+	focus = {
+		id = AFG_NEW_27
+		text = 外国人航海技術者を招く
+		icon = GFX_focus_generic_air_defense
+		cost = 10.00
+		prerequisite = {
+			focus = AFG_NEW_24
+			focus = AFG_NEW_25
+		}
+		x = 13
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 2.0
+				uses = 1
+				category = submarine_doctrine
+			}
+		}
+
+	}
+}

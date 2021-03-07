@@ -1,0 +1,140 @@
+ideas = {
+
+	country = {
+
+		OPmod_idea_AFG_1 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                minimum_training_level = -0.1
+                                consumer_goods_factor = -0.05
+			}
+		}
+		OPmod_idea_AFG_2 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                lend_lease_tension = -0.5
+                                consumer_goods_factor = -0.05
+			}
+		}
+		OPmod_idea_AFG_3 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                non_core_manpower = 0.03
+                                encryption_factor = 0.25
+			}
+		}
+		OPmod_idea_AFG_4 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                production_speed_buildings_factor = 0.1
+                                equipment_conversion_speed = 0.05
+			}
+		}
+		OPmod_idea_AFG_5 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                research_speed_factor = 0.1
+			}
+		}
+		OPmod_idea_AFG_6 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                conscription = 0.05
+                                army_org = 5
+			}
+		}
+		OPmod_idea_AFG_7 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                planning_speed = 0.10
+                                amphibious_invasion = 0.10
+                                invasion_preparation = -0.15
+			}
+		}
+		OPmod_idea_AFG_8 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                conscription = 0.03
+			}
+		}
+}

@@ -1,0 +1,24 @@
+
+state={
+	id=816
+	name="STATE_816"
+	manpower = 32294
+	
+	state_category = large_city
+
+	history={
+		owner = SPR
+		add_core_of = CAT
+		victory_points = {
+			6966 1
+		}
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 1
+		}
+		add_core_of = SPR
+	}
+	provinces={
+		6966
+	}
+}

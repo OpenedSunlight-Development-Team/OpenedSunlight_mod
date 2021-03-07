@@ -1,0 +1,40 @@
+ideas = {
+
+	country = {
+
+		OPmod_idea_SLV_1 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = no
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                production_factory_max_efficiency_factor = 0.4
+                                production_speed_buildings_factor = 0.5
+                                global_building_slots_factor = 1
+                                industrial_capacity_dockyard = 0.15
+                                industrial_capacity_factory = 0.65
+                                consumer_goods_factor = -0.5
+                                license_purchase_cost = -0.8
+                                license_armor_purchase_cost = -0.5
+                                license_production_speed = -0.1
+                                enemy_justify_war_goal_time = 1
+                                military_leader_cost_factor = 10
+                                army_chief_cost_factor = 100
+                                navy_chief_cost_factor = 100
+                                air_chief_cost_factor = 100
+                                cic_to_target_factor = 1
+                                min_export = 0.2
+                                economy_cost_factor = -0.9
+                                trade_laws_cost_factor = -0.9
+                                mobilization_laws_cost_factor = -0.9
+                                guarantee_cost = 10
+			}
+		}
+}

@@ -1,0 +1,1479 @@
+focus_tree = {
+	id = holand
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = FIN
+		}
+	}
+	default = no
+	focus = {
+		id = FIN_focus_0
+		text = 文民政府の準備
+		icon = GFX_goal_support_democracy
+		cost = 5.00
+		mutually_exclusive = {
+			focus = FIN_focus_10
+		}
+		x = 13
+		y = 0
+			available_if_capitulated = yes
+			completion_reward = {
+					add_political_power = 120
+					add_stability = -0.05
+				}
+
+	}
+	focus = {
+		id = FIN_focus_1
+		text = 外国資本の誘致
+		icon = GFX_goal_generic_construction2
+		cost = 10.00
+		x = 4
+		y = 0
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 2
+				}
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = construction_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = industrial_complex
+											size < 1
+											include_locked = yes
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_7
+		text = 国策会社への投資
+		icon = GFX_focus_generic_industry_2
+		cost = 10.00
+		x = 1
+		y = 0
+			completion_reward = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+							type = arms_factory
+							level = 3
+							instant_build = yes
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_10
+		text = 国民、国家、軍人の義務
+		icon = GFX_focus_generic_little_entente
+		cost = 2.00
+		mutually_exclusive = {
+			focus = FIN_focus_0
+		}
+		x = 15
+		y = 0
+			available_if_capitulated = yes
+
+			completion_reward = {
+					add_political_power = 120
+				}
+
+	}
+	focus = {
+		id = FIN_focus_24
+		text = 北欧の野望
+		icon = GFX_focus_NEU1
+		cost = 10.00
+		x = 19
+		y = 0
+			available = {
+					always = no
+				}
+			completion_reward = {
+					add_political_power = 200
+				}
+
+	}
+	focus = {
+		id = FIN_focus_29
+		text = 工業化政策
+		icon = GFX_goal_generic_construction
+		cost = 10.00
+		x = 7
+		y = 0
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = industrial_bonus
+							bonus = 1.0
+							uses = 1
+							category = industry
+						}
+				}
+			ai_will_do = {
+					factor = 3
+					modifier = {
+							factor = 0
+							date < 1939.1.1
+							OR = {
+									tag = GXC
+									tag = YUN
+									tag = SHX
+									tag = XSM
+									tag = BEL
+									tag = LUX
+									tag = HOL
+									tag = DEN
+									num_of_controlled_states < 2
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_42
+		text = 国防軍の改革
+		icon = GFX_focus_generic_combined_arms
+		cost = 10.00
+		x = 9
+		y = 0
+			available_if_capitulated = yes
+			completion_reward = {
+					army_experience = 5
+					add_tech_bonus = {
+							name = land_doc_bonus
+							bonus = 1.0
+							uses = 1
+							category = land_doctrine
+						}
+					country_event = {
+							id = fin_focus.13
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_2
+		text = 交通網の拡大
+		icon = GFX_goal_generic_build_tank
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_7
+			focus = FIN_focus_1
+		}
+		x = 3
+		y = 1
+			available_if_capitulated = yes
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = infrastructure_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = infrastructure
+											size < 1
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 0
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 1
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 1
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_6
+		text = VRグループの設立
+		icon = GFX_goal_generic_construct_civilian
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_2
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_3
+		}
+		x = 1
+		y = 2
+			available_if_capitulated = yes
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = infrastructure_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = infrastructure
+											size < 1
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 0
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 1
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 1
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_28
+		text = スウェーデンとの貿易
+		icon = GFX_focus_sweden
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_6
+		}
+		x = 2
+		y = 3
+			available_if_capitulated = yes
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = infrastructure_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = infrastructure
+											size < 1
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 0
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 1
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 1
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = arms_factory
+									level = 5
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_3
+		text = 外国鉄道の線路使用を許可
+		icon = GFX_goal_continuous_non_factory_construct
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_2
+		}
+		prerequisite = {
+			focus = FIN_focus_29
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_6
+		}
+		x = 5
+		y = 2
+
+	}
+	focus = {
+		id = FIN_focus_4
+		text = K.P.E.V.の誘致
+		icon = GFX_focus_kaey
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_3
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_5
+		}
+		x = 4
+		y = 3
+			available_if_capitulated = yes
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = infrastructure_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = infrastructure
+											size < 1
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 0
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 1
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 1
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_31
+		text = 国民工業
+		icon = GFX_focus_generic_military_academy
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_1
+		}
+		x = 5
+		y = 1
+			completion_reward = {
+					add_ideas = { fma }
+				}
+
+	}
+	focus = {
+		id = FIN_focus_5
+		text = О.А.Оの誘致
+		icon = GFX_focus_oso
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_3
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_4
+		}
+		x = 6
+		y = 3
+			available_if_capitulated = yes
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = infrastructure_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = infrastructure
+											size < 1
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 0
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 1
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 1
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_22
+		text = 新産業計画
+		icon = GFX_goal_generic_production
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_28
+			focus = FIN_focus_4
+			focus = FIN_focus_5
+		}
+		x = 3
+		y = 4
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 2
+				}
+			completion_reward = {
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+							type = arms_factory
+							level = 5
+							instant_build = yes
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_30
+		text = 国策工場
+		icon = GFX_focus_generic_industry_2
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_29
+		}
+		x = 7
+		y = 2
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 2
+				}
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = construction_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = industrial_complex
+											size < 1
+											include_locked = yes
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_43
+		text = 航空機の導入
+		icon = GFX_goal_generic_air_fighter2
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_42
+		}
+		x = 9
+		y = 1
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = fighter_bonus
+							bonus = 1.0
+							uses = 2
+							technology = early_fighter
+							technology = fighter1
+							technology = fighter2
+							technology = fighter3
+							technology = heavy_fighter1
+							technology = heavy_fighter2
+							technology = heavy_fighter3
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_44
+		text = 軍事産業検証会
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_43
+		}
+		x = 9
+		y = 2
+			available_if_capitulated = yes
+			completion_reward = {
+					add_research_slot = 1
+				}
+
+	}
+	focus = {
+		id = FIN_focus_45
+		text = 運輸通信省の組織改革
+		icon = GFX_focus_research2
+		cost = 12.00
+		prerequisite = {
+			focus = FIN_focus_30
+		}
+		prerequisite = {
+			focus = FIN_focus_44
+		}
+		x = 8
+		y = 3
+			available_if_capitulated = yes
+			completion_reward = {
+					add_research_slot = 1
+				}
+
+	}
+	focus = {
+		id = FIN_focus_18r
+		text = エドゥスクンタに権力を！
+		icon = GFX_focus_finrand2
+		cost = 5.00
+		prerequisite = {
+			focus = FIN_focus_0
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_13
+		}
+		x = 11
+		y = 1
+			completion_reward = {
+					news_event = {
+							id = fin_focus.1
+						}
+					add_popularity = {
+							ideology = conservatism
+							popularity = 0.8
+						}
+					set_country_leader_ideology = conservatism
+				}
+
+	}
+	focus = {
+		id = FIN_focus_13
+		text = 北欧進歩主義
+		icon = GFX_goal_continuous_research
+		cost = 15.00
+		prerequisite = {
+			focus = FIN_focus_0
+			focus = FIN_focus_10
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_18r
+			focus = FIN_focus_11
+		}
+		x = 14
+		y = 1
+			available_if_capitulated = yes
+			completion_reward = {
+					add_research_slot = 1
+				}
+
+	}
+	focus = {
+		id = FIN_focus_8
+		text = 共和政への国民感情の扇動
+		icon = GFX_goal_continuous_def_against_influence
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_18r
+			focus = FIN_focus_13
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_9
+		}
+		x = 11
+		y = 2
+			completion_reward = {
+					add_popularity = {
+							ideology = communism
+							popularity = 0.1
+						}
+					add_popularity = {
+							ideology = conservatism
+							popularity = 0.1
+						}
+					add_popularity = {
+							ideology = socialismri
+							popularity = 0.1
+						}
+					add_popularity = {
+							ideology = socialismre
+							popularity = 0.1
+						}
+					add_popularity = {
+							ideology = progressivism
+							popularity = 0.1
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_14
+		text = 共産主義への傾倒
+		icon = GFX_focus_prc_agrarian_socialism
+		cost = 13.00
+		prerequisite = {
+			focus = FIN_focus_8
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_15
+		}
+		x = 10
+		y = 3
+			completion_reward = {
+					add_popularity = {
+							ideology = communism
+							popularity = 0.2
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_15
+		text = 新フィンランド共和国
+		icon = GFX_goal_generic_national_unity
+		cost = 13.00
+		prerequisite = {
+			focus = FIN_focus_8
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_14
+		}
+		x = 12
+		y = 3
+			completion_reward = {
+					add_popularity = {
+							ideology = progressivism
+							popularity = 0.3
+						}
+set_country_leader_ideology = progressivism
+				}
+
+	}
+	focus = {
+		id = FIN_focus_16
+		text = 北欧モデル
+		icon = GFX_focus_mex_soldaderas
+		cost = 7.00
+		prerequisite = {
+			focus = FIN_focus_15
+		}
+		x = 12
+		y = 4
+			completion_reward = {
+					add_popularity = {
+							ideology = progressivism
+							popularity = 0.4
+						}
+					set_country_leader_ideology = progressivism
+				}
+
+	}
+	focus = {
+		id = FIN_focus_11
+		text = 大北欧主義
+		icon = GFX_goal_anschluss
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_10
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_13
+		}
+		x = 17
+		y = 1
+			completion_reward = {
+					add_political_power = 120
+				}
+
+	}
+	focus = {
+		id = FIN_focus_9
+		text = カレワラとポホヨラの主
+		icon = GFX_focus_finlad_empeir
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_13
+			focus = FIN_focus_11
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_8
+			focus = FIN_focus_18
+		}
+		x = 14
+		y = 2
+			completion_reward = {
+					add_popularity = {
+							ideology = despotism
+							popularity = 0.2
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_23
+		text = プロイセンとの協力
+		icon = GFX_focus_presia
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_9
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_20
+			focus = FIN_focus_19
+		}
+		x = 14
+		y = 3
+			completion_reward = {
+					add_ideas = { ITA_german_millitary_cooperation_focus }
+				}
+
+	}
+	focus = {
+		id = FIN_focus_26
+		text = フィンランド王国の復活
+		icon = GFX_focus_generic_home_defense
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_23
+		}
+		x = 14
+		y = 4
+			completion_reward = {
+					add_popularity = {
+							ideology = despotism
+							popularity = 0.4
+						}
+					set_country_leader_ideology = despotism
+					news_event = {
+							id = fin_focus.7
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_18
+		text = ヴァイキングの遺産
+		icon = GFX_goal_generic_cavalry
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_11
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_9
+		}
+		x = 17
+		y = 2
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = armor_bonus
+							bonus = 1.0
+							uses = 2
+							category = armor
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_20
+		text = 新外交戦略
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_9
+			focus = FIN_focus_18
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_23
+			focus = FIN_focus_19
+		}
+		x = 16
+		y = 3
+			completion_reward = {
+					add_ideas = { neutrality_idea }
+				}
+
+	}
+	focus = {
+		id = FIN_focus_25
+		text = 国家戦争計画
+		icon = GFX_goal_generic_fortify_city
+		cost = 3.00
+		prerequisite = {
+			focus = FIN_focus_20
+		}
+		x = 16
+		y = 4
+			completion_reward = {
+					add_ideas = { sisu }
+					complete_national_focus = FIN_focus_24
+				}
+
+	}
+	focus = {
+		id = FIN_focus_19
+		text = 民族の伝統
+		icon = GFX_goal_generic_army_doctrines
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_18
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_23
+			focus = FIN_focus_20
+		}
+		x = 18
+		y = 3
+			completion_reward = {
+					add_ideas = { sisu }
+				}
+
+	}
+	focus = {
+		id = FIN_focus_32
+		text = 戦時工業
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_19
+		}
+		x = 18
+		y = 4
+			completion_reward = {
+					add_ideas = { wartime_industry_focus }
+				}
+
+	}
+	focus = {
+		id = FIN_focus_41r
+		text = バルト地域の安全保障
+		icon = GFX_goal_generic_military_deal
+		cost = 5.00
+		prerequisite = {
+			focus = FIN_focus_24
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_35
+		}
+		x = 20
+		y = 1
+			completion_reward = {
+					diplomatic_relation = {
+							country = EST
+							relation = guarantee
+							active = no
+						}
+					diplomatic_relation = {
+							country = LAT
+							relation = guarantee
+							active = no
+						}
+					diplomatic_relation = {
+							country = LIT
+							relation = guarantee
+							active = no
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_36
+		text = 北欧理事会の設立
+		icon = GFX_focus_NEU2
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_11
+		}
+		prerequisite = {
+			focus = FIN_focus_24
+		}
+		prerequisite = {
+			focus = FIN_focus_41r
+		}
+		x = 20
+		y = 2
+			completion_reward = {
+					news_event = {
+							id = fin_focus.6
+						}
+					add_political_power = 120
+					completion_reward = {
+							diplomatic_relation = {
+									country = SWE
+									relation = guarantee
+									active = no
+								}
+							diplomatic_relation = {
+									country = NOR
+									relation = guarantee
+									active = no
+								}
+							diplomatic_relation = {
+									country = DEN
+									relation = guarantee
+									active = no
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_38
+		text = 北欧連合国家
+		icon = GFX_focus_NEU3
+		cost = 15.00
+		prerequisite = {
+			focus = FIN_focus_36
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_39
+		}
+		x = 20
+		y = 3
+			completion_reward = {
+					set_cosmetic_tag = NDC_UNIFIED
+					news_event = {
+							id = fin_focus.9
+						}
+					NOR = {
+							country_event = {
+									id = fin_focus.2
+								}
+						}
+					DEN = {
+							country_event = {
+									id = fin_focus.3
+								}
+						}
+					SWE = {
+							country_event = {
+									id = fin_focus.4
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_21
+		text = 新農業政策
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_22
+		}
+		x = 2
+		y = 5
+			completion_reward = {
+					add_ideas = { GRE_farmer_managed_communes }
+				}
+
+	}
+	focus = {
+		id = FIN_focus_27
+		text = 模範的労働者の宣伝
+		icon = GFX_goal_continuous_boost_freedom
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_22
+		}
+		x = 4
+		y = 5
+			completion_reward = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_35
+		text = フィンランド・バルト帝国
+		icon = GFX_goal_generic_major_war
+		cost = 5.00
+		prerequisite = {
+			focus = FIN_focus_24
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_41r
+		}
+		x = 22
+		y = 1
+			completion_reward = {
+					declare_war_on = {
+							target = EST
+							type = annex_everything
+						}
+					declare_war_on = {
+							target = LIT
+							type = annex_everything
+						}
+					declare_war_on = {
+							target = LAT
+							type = annex_everything
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_37
+		text = 対露戦略橋頭保
+		icon = GFX_focus_usa_focus_on_europe
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_35
+		}
+		x = 22
+		y = 2
+			completion_reward = {
+					declare_war_on = {
+							target = NOV
+							type = annex_everything
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_39
+		text = フィンランド国号の維持
+		icon = GFX_focus_finland
+		cost = 5.00
+		prerequisite = {
+			focus = FIN_focus_36
+			focus = FIN_focus_37
+		}
+		mutually_exclusive = {
+			focus = FIN_focus_38
+		}
+		x = 22
+		y = 3
+			completion_reward = {
+					add_political_power = 120
+					add_stability = 0.2
+				}
+
+	}
+	focus = {
+		id = FIN_focus_41
+		text = 長い冬
+		icon = GFX_focus_ger_strike_at_the_source
+		cost = 10.00
+		prerequisite = {
+			focus = FIN_focus_38
+			focus = FIN_focus_39
+		}
+		prerequisite = {
+			focus = FIN_focus_38
+			focus = FIN_focus_39
+		}
+		x = 21
+		y = 4
+			completion_reward = {
+					declare_war_on = {
+							target = SOV
+							type = annex_everything
+						}
+					news_event = {
+							id = fin_focus.10
+						}
+				}
+
+	}
+	focus = {
+		id = FIN_focus_17
+		text = 唯一の正当な政府
+		icon = GFX_focus_generic_join_comintern
+		cost = 7.00
+		prerequisite = {
+			focus = FIN_focus_14
+		}
+		x = 10
+		y = 4
+			completion_reward = {
+					news_event = {
+							id = fin_focus.11
+						}
+					add_popularity = {
+							ideology = communism
+							popularity = 0.4
+						}
+					set_country_leader_ideology =communism
+				}
+
+	}
+	focus = {
+		id = FIN_focus_33
+		text = 白い悪夢
+		icon = GFX_goal_rhineland
+		cost = 2.00
+		prerequisite = {
+			focus = FIN_focus_26
+			focus = FIN_focus_32
+		}
+		x = 16
+		y = 5
+			completion_reward = {
+					add_ideas = { HUN_war_preparation }
+					complete_national_focus = FIN_focus_24
+				}
+
+	}
+	focus = {
+		id = FIN_focus_34
+		text = フィンランドの進む道
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 2.00
+		prerequisite = {
+			focus = FIN_focus_17
+			focus = FIN_focus_16
+		}
+		x = 11
+		y = 5
+			completion_reward = {
+					add_ideas = { HUN_war_preparation }
+					complete_national_focus = FIN_focus_24
+				}
+
+	}
+}

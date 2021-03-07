@@ -1,0 +1,197 @@
+ideas = {
+
+	country = {
+
+		OPmod_idea_ITA_1 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                economy_cost_factor = -0.3
+                                consumer_goods_factor = -0.1
+			}
+		}
+		OPmod_idea_ITA_2 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                production_speed_naval_base_factor = 0.25
+                                industrial_capacity_dockyard = 0.15
+                                production_speed_radar_station_factor = 0.15
+			}
+		}
+		OPmod_idea_ITA_3 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                army_speed_factor = 0.1
+                                army_attack_factor = 0.1
+                                attrition = -0.05
+			}
+		}
+		OPmod_idea_ITA_4 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                consumer_goods_factor = -0.03
+			}
+		}
+		OPmod_idea_ITA_5 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                planning_speed = 0.10
+                                decryption_factor = 0.35
+                                amphibious_invasion = 0.15
+                                planning_speed = 0.10
+                                invasion_preparation = -0.25
+			}
+		}
+		OPmod_idea_ITA_6 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                conscription = 0.25
+			}
+		}
+		OPmod_idea_ITA_7 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                navy_chief_cost_factor = -0.2
+                                navy_refit_ic_cost = -0.2
+                                repair_speed_factor = 2.0
+			}
+		}
+		OPmod_idea_ITA_8 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                improve_relations_maintain_cost_factor = -0.2
+                                heat_attrition_factor = -0.5
+                                terrain_penalty_reduction = 0.5
+                                out_of_supply_factor = -0.1
+			}
+		}
+		OPmod_idea_ITA_9 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                research_speed_factor = 0.15
+                                conscription = -0.02
+			}
+		}
+		OPmod_idea_ITA_10 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                consumer_goods_factor = -0.03
+			}
+		}
+		OPmod_idea_ITA_11 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                production_factory_max_efficiency_factor = 0.2
+                                industrial_capacity_factory = 0.1
+			}
+		}
+}

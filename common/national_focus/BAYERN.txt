@@ -1,0 +1,823 @@
+focus_tree = {
+	id = BAYERN
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = BAY
+		}
+	}
+	default = no
+	focus = {
+		id = BAYERN_1
+		text = バイエルン国家
+		icon = GFX_focus_generic_monarchy_2
+		cost = 10.00
+		mutually_exclusive = {
+			focus = BAYERN_12
+		}
+		x = 3
+		y = 0
+		completion_reward = {
+			add_political_power = -250
+			add_popularity = { ideology = despotism popularity = 0.5 }
+			set_politics = { ruling_party = despotism elections_allowed = yes }
+		}
+
+	}
+	focus = {
+		id = BAYERN_12
+		text = ドイツ国家
+		icon = GFX_focus_ger_revive_kaiserreich
+		cost = 10.00
+		mutually_exclusive = {
+			focus = BAYERN_1
+		}
+		x = 13
+		y = 0
+		completion_reward = {
+			add_political_power = 150
+		}
+
+	}
+	focus = {
+		id = BAYERN_25
+		text = 軍備増産計画
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10.00
+		x = 25
+		y = 0
+		completion_reward = {
+			add_political_power = 150
+		}
+
+	}
+	focus = {
+		id = BAYERN_2
+		text = 国境問題の解決
+		icon = GFX_focus_chi_reach_out_to_france
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_1
+		}
+		x = 2
+		y = 1
+		completion_reward = {
+			add_stability = 0.2
+		}
+
+	}
+	focus = {
+		id = BAYERN_3
+		text = プロイセンとの和解
+		icon = GFX_focus_ger_return_of_the_kaiser
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_1
+		}
+		x = 4
+		y = 1
+		completion_reward = {
+			add_war_support = 0.2
+		}
+
+	}
+	focus = {
+		id = BAYERN_4
+		text = バイエルンの夜明け
+		icon = GFX_focus_hun_elect_a_king
+		cost = 30.00
+		prerequisite = {
+			focus = BAYERN_3
+		}
+		prerequisite = {
+			focus = BAYERN_2
+		}
+		x = 3
+		y = 2
+		completion_reward = {
+			add_ideas = OPmod_idea_BAY_1
+		}
+	}
+	focus = {
+		id = BAYERN_5
+		text = バイエルン王国
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_4
+		}
+		mutually_exclusive = {
+			focus = BAYERN_6
+		}
+		x = 1
+		y = 3
+		completion_reward = {
+			create_faction = "BAYERN_PACT"
+		}
+
+	}
+	focus = {
+		id = BAYERN_6
+		text = ドナウ連邦
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_4
+		}
+		mutually_exclusive = {
+			focus = BAYERN_5
+		}
+		x = 6
+		y = 3
+		completion_reward = {
+			create_faction = "DONAURENPO"
+		}
+
+	}
+	focus = {
+		id = BAYERN_13
+		text = 独立への道
+		icon = GFX_focus_generic_soviet_politics
+		cost = 40.00
+		prerequisite = {
+			focus = BAYERN_12
+		}
+		mutually_exclusive = {
+			focus = BAYERN_14
+		}
+		x = 11
+		y = 1
+		completion_reward = {
+			add_popularity = { ideology = socialismri popularity = 0.75 }
+			set_politics = { ruling_party = socialismri elections_allowed = yes }
+		}
+
+	}
+	focus = {
+		id = BAYERN_15
+		text = フランスへ接近
+		icon = GFX_focus_chi_reach_out_to_france
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_13
+		}
+		x = 10
+		y = 2
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = { ideology = socialismri popularity = 0.1 }
+		}
+
+	}
+	focus = {
+		id = BAYERN_17
+		text = 軍事顧問団の招待
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_15
+		}
+		x = 10
+		y = 3
+		completion_reward = {
+			add_manpower = 50000
+			army_experience = 150
+			air_experience = 150
+		}
+
+	}
+	focus = {
+		id = BAYERN_16
+		text = ボヘミアへの圧力
+		icon = GFX_focus_generic_manpower
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_13
+		}
+		x = 12
+		y = 2
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = CZE
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = BAYERN_18
+		text = プロイセン規約の破棄通知
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_16
+		}
+		x = 12
+		y = 3
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = PRE
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = BAYERN_14
+		text = 統一への道
+		icon = GFX_focus_ger_revive_kaiserreich
+		cost = 30.00
+		prerequisite = {
+			focus = BAYERN_12
+		}
+		mutually_exclusive = {
+			focus = BAYERN_13
+		}
+		x = 16
+		y = 1
+		completion_reward = {
+			add_popularity = { ideology = reactionary popularity = 0.5 }
+			set_politics = { ruling_party = reactionary elections_allowed = yes }
+		}
+
+	}
+	focus = {
+		id = BAYERN_20
+		text = 戦争経済の準備
+		icon = GFX_focus_chi_army_reform
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_14
+		}
+		x = 16
+		y = 2
+		completion_reward = {
+			add_political_power = 250
+			add_manpower = 10000
+			army_experience = 50
+		}
+
+	}
+	focus = {
+		id = BAYERN_21
+		text = オーストリア進駐
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_20
+		}
+		x = 14
+		y = 3
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = AUS
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = BAYERN_22
+		text = ボヘミア侵攻
+		icon = GFX_focus_generic_provoke_border_clashes
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_20
+		}
+		x = 16
+		y = 3
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = CZE
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = BAYERN_23
+		text = モラヴィアの傀儡化
+		icon = GFX_focus_mex_privatisation
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_20
+		}
+		x = 18
+		y = 3
+		completion_reward = {
+			create_wargoal = {
+				type = topple_government
+				target = SLO
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = BAYERN_26
+		text = 空軍司令官の登用
+		icon = GFX_focus_generic_military_mission
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_25
+		}
+		x = 21
+		y = 1
+		completion_reward = {
+			add_ideas = HANYODAYO_8
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 2
+				category = air_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = BAYERN_29
+		text = 航空力学の研究
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_26
+		}
+		x = 21
+		y = 2
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+	}
+	focus = {
+		id = BAYERN_30
+		text = 高機動戦闘機
+		icon = GFX_goal_generic_air_fighter
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_29
+		}
+		x = 20
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 1
+				category = light_fighter
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+	focus = {
+		id = BAYERN_31
+		text = 近接航空支援樹の更新
+		icon = GFX_goal_generic_air_fighter2
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_29
+		}
+		x = 22
+		y = 3
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ITA_bomber_effort
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+				#technology = CAS2
+				#technology = CAS3
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+	focus = {
+		id = BAYERN_27
+		text = 陸軍司令官の登用
+		icon = GFX_focus_generic_military_mission
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_25
+		}
+		x = 25
+		y = 1
+		completion_reward = {
+			add_ideas = HANYODAYO_6
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 2
+				category = land_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = BAYERN_33
+		text = 予備役の充足
+		icon = GFX_focus_secret_rearmament
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_27
+		}
+		x = 23
+		y = 2
+		completion_reward = {
+			add_ideas = OPmod_idea_BAY_YOBIEKI
+		}
+
+	}
+	focus = {
+		id = BAYERN_34
+		text = 要因募集キャンペーン
+		icon = GFX_focus_generic_manpower
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_27
+		}
+		x = 25
+		y = 2
+		completion_reward = {
+			add_ideas = OPmod_idea_BAY_YOIN
+		}
+
+	}
+	focus = {
+		id = BAYERN_36
+		text = 機甲師団の編成
+		icon = GFX_goal_generic_army_tanks
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_33
+			focus = BAYERN_34
+		}
+		x = 24
+		y = 3
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+		}
+
+	}
+	focus = {
+		id = BAYERN_35
+		text = 砲兵の訓練
+		icon = GFX_goal_generic_army_artillery2
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_27
+		}
+		x = 27
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = arty_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+
+	}
+	focus = {
+		id = BAYERN_37
+		text = レーションの開発
+		icon = GFX_focus_chi_army_reform
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_35
+			focus = BAYERN_34
+		}
+		x = 26
+		y = 3
+		completion_reward = {
+			add_ideas = OPmod_idea_BAY_GOHAN
+		}
+
+	}
+	focus = {
+		id = BAYERN_28
+		text = 海軍司令官の登用
+		icon = GFX_focus_generic_military_mission
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_25
+		}
+		x = 29
+		y = 1
+		completion_reward = {
+			add_ideas = HANYODAYO_7
+			add_tech_bonus = {
+				name = uk_waves_focus
+				bonus = 1.0
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = BAYERN_39
+		text = レーダー技術の開発
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_28
+		}
+		x = 29
+		y = 2
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+	}
+	focus = {
+		id = BAYERN_40
+		text = 潜水艦の建造計画
+		icon = GFX_goal_generic_navy_submarine
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_39
+		}
+		x = 28
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+
+	}
+	focus = {
+		id = BAYERN_7
+		text = ボヘミアへの進軍
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_5
+		}
+		x = 0
+		y = 4
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = CZE
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = BAYERN_19
+		text = フランスとの共同研究
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_18
+			focus = BAYERN_17
+		}
+		x = 11
+		y = 4
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+	}
+	focus = {
+		id = BAYERN_24
+		text = プロイセンへの攻勢
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_22
+		}
+		prerequisite = {
+			focus = BAYERN_23
+		}
+		prerequisite = {
+			focus = BAYERN_21
+		}
+		x = 16
+		y = 4
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = PRE
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = HOL
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = BAYERN_9
+		text = ハンガリーを招待する
+		icon = GFX_goal_generic_improve_relations
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_6
+		}
+		x = 4
+		y = 4
+		completion_reward = {
+			if = {
+				limit = {
+					HUN = { 
+						is_ai = yes
+						is_subject = no
+						is_in_faction = no
+					}					
+				}
+				add_to_faction = HUN
+				HUN = {
+					add_ai_strategy = {
+						type = alliance
+						id = "BAY"
+						value = 200
+					}
+				}
+			}
+
+		}
+
+	}
+	focus = {
+		id = BAYERN_10
+		text = ルーマニアを招待する
+		icon = GFX_goal_generic_improve_relations
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_6
+		}
+		x = 6
+		y = 4
+		completion_reward = {
+			if = {
+				limit = {
+					ROM = { 
+						is_ai = yes
+						is_subject = no
+						is_in_faction = no
+					}					
+				}
+				add_to_faction = ROM
+				ROM = {
+					add_ai_strategy = {
+						type = alliance
+						id = "BAY"
+						value = 200
+					}
+				}
+			}
+
+		}
+
+	}
+	focus = {
+		id = BAYERN_11
+		text = ブルガリアを招待する
+		icon = GFX_goal_generic_improve_relations
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_6
+		}
+		x = 8
+		y = 4
+		completion_reward = {
+			if = {
+				limit = {
+					BUL = { 
+						is_ai = yes
+						is_subject = no
+						is_in_faction = no
+					}					
+				}
+				add_to_faction = BUL
+				BUL = {
+					add_ai_strategy = {
+						type = alliance
+						id = "BAY"
+						value = 200
+					}
+				}
+			}
+
+		}
+
+	}
+	focus = {
+		id = BAYERN_8
+		text = オーストリア編入
+		icon = GFX_focus_generic_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_5
+			focus = BAYERN_6
+		}
+		x = 2
+		y = 4
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = AUS
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = BAYERN_41
+		text = 戦艦の青写真を取得
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_39
+		}
+		x = 30
+		y = 3
+		completion_reward = {
+			add_ideas = OPmod_idea_BAY_SENKAN
+		}
+
+	}
+	focus = {
+		id = BAYERN_32
+		text = 航空技術の転用
+		icon = GFX_focus_rocketry
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_30
+		}
+		prerequisite = {
+			focus = BAYERN_31
+		}
+		x = 21
+		y = 4
+		completion_reward = {
+			add_ideas = OPmod_idea_BAY_LOCKET
+		}
+
+	}
+	focus = {
+		id = BAYERN_42
+		text = 柔軟な核兵器の運用
+		icon = GFX_focus_wonderweapons
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_40
+		}
+		prerequisite = {
+			focus = BAYERN_41
+		}
+		x = 29
+		y = 4
+		completion_reward = {
+			add_ideas = OPmod_idea_BAY_NUK
+		}
+
+	}
+	focus = {
+		id = BAYERN_38
+		text = 暗視装備の実用化
+		icon = GFX_focus_generic_license_production
+		cost = 10.00
+		prerequisite = {
+			focus = BAYERN_36
+			focus = BAYERN_37
+		}
+		x = 25
+		y = 4
+		completion_reward = {
+			add_ideas = OPmod_idea_BAY_ANSHI
+		}
+
+	}
+}

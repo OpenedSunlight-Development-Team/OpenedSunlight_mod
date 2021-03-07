@@ -1,0 +1,32 @@
+
+state={
+	id=808
+	name="STATE_808"
+	manpower = 2947523
+	resources={
+		steel=12
+	}
+
+
+	state_category = metropolis
+	
+	history={
+		owner = PRE
+		victory_points = {
+			3547 3
+		}
+		buildings = {
+			infrastructure = 9
+			arms_factory = 3
+			industrial_complex = 1
+			air_base = 1
+
+		}
+		add_core_of = PRE
+	}
+
+	provinces={
+		587 3444 3547 9522 
+	}
+	
+}

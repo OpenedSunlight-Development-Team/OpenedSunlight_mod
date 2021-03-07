@@ -1,0 +1,27 @@
+state={
+	id=815
+	name="STATE_815"
+	manpower = 124624
+	state_category = city
+	
+	resources={
+		steel=12
+	}
+
+	history={
+		owner = SOV
+		buildings = {
+			infrastructure = 4
+			air_base = 1
+			94 = {
+				naval_base = 2
+				coastal_bunker = 2
+			}
+
+		}
+		add_core_of = SOV
+	}
+	provinces={
+		3008 86 6029 3189 9195 94 9045 3078 9055 6159
+	}
+}

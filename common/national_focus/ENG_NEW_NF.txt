@@ -1,0 +1,1743 @@
+focus_tree = {
+	id = ENG_NEW_NF
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ENG
+		}
+	}
+	default = no
+	focus = {
+		id = 1936年議会討論会
+		icon = GFX_focus_generic_self_management
+		cost = 10.00
+		x = 18
+		y = 0
+
+	}
+	focus = {
+		id = 経済改革
+		icon = GFX_focus_mex_privatisation
+		cost = 10.00
+		x = 44
+		y = 0
+
+	}
+	focus = {
+		id = 戦術研究
+		icon = GFX_goal_generic_position_armies
+		cost = 10.00
+		x = 59
+		y = 0
+
+	}
+	focus = {
+		id = 対オスマン外交の開始
+		icon = GFX_focus_generic_aegean_sea_focus
+		cost = 10.00
+		x = 71
+		y = 0
+
+	}
+	focus = {
+		id = フランスを非難
+		icon = GFX_focus_eng_the_sun_never_sets
+		cost = 10.00
+		x = 71
+		y = 4
+
+	}
+	focus = {
+		id = 民
+		icon = GFX_focus_generic_join_comintern
+		cost = 10.00
+		prerequisite = {
+			focus = 1936年議会討論会
+		}
+		mutually_exclusive = {
+			focus = 官
+			focus = 神
+			focus = 官
+			focus = 神
+			focus = 王
+			focus = 軍
+		}
+		x = 2
+		y = 1
+
+	}
+	focus = {
+		id = フランスとの国交正常化
+		icon = GFX_focus_chi_reach_out_to_france
+		cost = 10.00
+		prerequisite = {
+			focus = 民
+		}
+		x = 0
+		y = 2
+
+	}
+	focus = {
+		id = 第五種徴兵法
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		cost = 10.00
+		prerequisite = {
+			focus = フランスとの国交正常化
+		}
+		x = 0
+		y = 3
+
+	}
+	focus = {
+		id = アフリカにおける反乱の鎮圧
+		icon = GFX_focus_generic_manpower
+		cost = 10.00
+		prerequisite = {
+			focus = 第五種徴兵法
+		}
+		x = 0
+		y = 4
+
+	}
+	focus = {
+		id = カナダへ政府の基地要求
+		icon = GFX_goal_generic_position_armies
+		cost = 10.00
+		prerequisite = {
+			focus = アフリカにおける反乱の鎮圧
+		}
+		x = 0
+		y = 5
+
+	}
+	focus = {
+		id = 農地の管理
+		icon = GFX_focus_generic_concessions
+		cost = 10.00
+		prerequisite = {
+			focus = 民
+		}
+		x = 2
+		y = 2
+
+	}
+	focus = {
+		id = 政党の禁止
+		icon = GFX_focus_usa_voter_registration_act
+		cost = 10.00
+		prerequisite = {
+			focus = 農地の管理
+		}
+		x = 2
+		y = 3
+
+	}
+	focus = {
+		id = 海空軍への予算投資
+		icon = GFX_goal_generic_navy_carrier
+		cost = 10.00
+		prerequisite = {
+			focus = 政党の禁止
+		}
+		prerequisite = {
+			focus = 第五種徴兵法
+		}
+		x = 2
+		y = 4
+
+	}
+	focus = {
+		id = オーストラリア政府への警告文
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = 海空軍への予算投資
+		}
+		x = 2
+		y = 5
+
+	}
+	focus = {
+		id = 産業税の導入
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10.00
+		prerequisite = {
+			focus = 民
+		}
+		x = 4
+		y = 2
+
+	}
+	focus = {
+		id = 新憲法の承認
+		icon = GFX_focus_eng_decolonization
+		cost = 10.00
+		prerequisite = {
+			focus = 産業税の導入
+		}
+		x = 4
+		y = 3
+
+	}
+	focus = {
+		id = 官
+		icon = GFX_focus_eng_liberate_the_home_of_marx
+		cost = 10.00
+		prerequisite = {
+			focus = 1936年議会討論会
+		}
+		mutually_exclusive = {
+			focus = 民
+			focus = 民
+			focus = 神
+			focus = 神
+			focus = 王
+			focus = 軍
+		}
+		x = 12
+		y = 1
+
+	}
+	focus = {
+		id = インフラ事業の再開
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		prerequisite = {
+			focus = 官
+		}
+		x = 8
+		y = 2
+
+	}
+	focus = {
+		id = 高等教育の完全無償化
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 10.00
+		prerequisite = {
+			focus = インフラ事業の再開
+			focus = 産業税の導入
+		}
+		x = 6
+		y = 3
+
+	}
+	focus = {
+		id = 外交部門の設立
+		icon = GFX_goal_generic_major_alliance
+		cost = 10.00
+		prerequisite = {
+			focus = 高等教育の完全無償化
+		}
+		prerequisite = {
+			focus = 新憲法の承認
+		}
+		prerequisite = {
+			focus = 政党の禁止
+		}
+		x = 4
+		y = 4
+
+	}
+	focus = {
+		id = 都市部の開発
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		prerequisite = {
+			focus = インフラ事業の再開
+		}
+		x = 8
+		y = 3
+
+	}
+	focus = {
+		id = 医療設備への投資
+		icon = GFX_focus_mex_privatisation
+		cost = 10.00
+		prerequisite = {
+			focus = 官
+		}
+		x = 10
+		y = 2
+
+	}
+	focus = {
+		id = 議会の占領
+		icon = GFX_goal_generic_radar
+		cost = 10.00
+		prerequisite = {
+			focus = 医療設備への投資
+		}
+		x = 10
+		y = 3
+
+	}
+	focus = {
+		id = MI6
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 10.00
+		prerequisite = {
+			focus = 議会の占領
+		}
+		prerequisite = {
+			focus = 都市部の開発
+		}
+		x = 8
+		y = 4
+
+	}
+	focus = {
+		id = ライン事業からの撤退
+		icon = GFX_focus_renounce_the_treaty_of_triannon
+		cost = 10.00
+		prerequisite = {
+			focus = 官
+		}
+		x = 12
+		y = 2
+
+	}
+	focus = {
+		id = 兵器開発部門の視察
+		icon = GFX_focus_generic_combined_arms
+		cost = 10.00
+		prerequisite = {
+			focus = ライン事業からの撤退
+		}
+		x = 12
+		y = 3
+
+	}
+	focus = {
+		id = 地中海への不干渉
+		icon = GFX_goal_generic_position_armies
+		cost = 10.00
+		prerequisite = {
+			focus = 兵器開発部門の視察
+		}
+		x = 10
+		y = 4
+
+	}
+	focus = {
+		id = 英仏同盟
+		icon = GFX_focus_chi_reach_out_to_france
+		cost = 10.00
+		prerequisite = {
+			focus = 兵器開発部門の視察
+		}
+		x = 12
+		y = 4
+
+	}
+	focus = {
+		id = インドを歓迎する
+		icon = GFX_focus_eng_the_sun_never_sets
+		cost = 10.00
+		prerequisite = {
+			focus = MI6
+		}
+		prerequisite = {
+			focus = 英仏同盟
+			focus = 地中海への不干渉
+		}
+		x = 12
+		y = 5
+
+	}
+	focus = {
+		id = 対岸の火事
+		icon = GFX_focus_hol_gateway_to_europe
+		cost = 10.00
+		prerequisite = {
+			focus = インドを歓迎する
+		}
+		x = 12
+		y = 6
+
+	}
+	focus = {
+		id = 神
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 10.00
+		prerequisite = {
+			focus = 1936年議会討論会
+		}
+		mutually_exclusive = {
+			focus = 民
+			focus = 官
+			focus = 官
+			focus = 民
+			focus = 王
+			focus = 軍
+			focus = 王
+			focus = 王
+		}
+		x = 18
+		y = 1
+
+	}
+	focus = {
+		id = 反革命への合意
+		icon = GFX_focus_eng_global_defense
+		cost = 10.00
+		prerequisite = {
+			focus = 神
+		}
+		x = 17
+		y = 2
+
+	}
+	focus = {
+		id = 外交基本方針
+		icon = GFX_focus_generic_diplomatic_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = 神
+		}
+		x = 19
+		y = 2
+
+	}
+	focus = {
+		id = 1936年議会討論会の完了
+		icon = GFX_goal_generic_improve_relations
+		cost = 10.00
+		prerequisite = {
+			focus = 外交基本方針
+		}
+		prerequisite = {
+			focus = 反革命への合意
+		}
+		x = 18
+		y = 3
+
+	}
+	focus = {
+		id = インド会議
+		icon = GFX_focus_RAJ_two_nation_theory
+		cost = 10.00
+		prerequisite = {
+			focus = 1936年議会討論会の完了
+		}
+		x = 15
+		y = 4
+
+	}
+	focus = {
+		id = 貿易会社の帰還
+		icon = GFX_focus_generic_industry_3
+		cost = 10.00
+		prerequisite = {
+			focus = 1936年議会討論会の完了
+		}
+		x = 17
+		y = 4
+
+	}
+	focus = {
+		id = アムステルダム相互保護条約
+		icon = GFX_focus_generic_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = インド会議
+		}
+		prerequisite = {
+			focus = 貿易会社の帰還
+		}
+		x = 16
+		y = 5
+
+	}
+	focus = {
+		id = 反革命同盟
+		icon = GFX_focus_generic_strike_at_democracy2
+		cost = 10.00
+		prerequisite = {
+			focus = 1936年議会討論会の完了
+		}
+		x = 19
+		y = 4
+
+	}
+	focus = {
+		id = バイエルン問題
+		icon = GFX_focus_generic_provoke_border_clashes
+		cost = 10.00
+		prerequisite = {
+			focus = 反革命同盟
+		}
+		x = 19
+		y = 5
+
+	}
+	focus = {
+		id = プロイセンを同盟に招待
+		icon = GFX_goal_generic_improve_relations
+		cost = 10.00
+		prerequisite = {
+			focus = バイエルン問題
+		}
+		x = 19
+		y = 6
+
+	}
+	focus = {
+		id = 軍需生産への投資
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 1936年議会討論会の完了
+		}
+		x = 21
+		y = 4
+
+	}
+	focus = {
+		id = 民間統制の確認
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 反革命同盟
+			focus = 軍需生産への投資
+		}
+		x = 21
+		y = 5
+
+	}
+	focus = {
+		id = アメリカ資本の利用
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 民間統制の確認
+		}
+		x = 21
+		y = 6
+
+	}
+	focus = {
+		id = 王
+		icon = GFX_focus_eng_god_save_the_king
+		cost = 10.00
+		prerequisite = {
+			focus = 1936年議会討論会
+		}
+		mutually_exclusive = {
+			focus = 神
+			focus = 軍
+			focus = 神
+			focus = 官
+			focus = 神
+			focus = 民
+		}
+		x = 26
+		y = 1
+
+	}
+	focus = {
+		id = プロイセンとの密約
+		icon = GFX_focus_generic_monarchy_2
+		cost = 10.00
+		prerequisite = {
+			focus = 王
+		}
+		x = 24
+		y = 2
+
+	}
+	focus = {
+		id = ハノーファー精神
+		icon = GFX_focus_ger_return_of_the_kaiser
+		cost = 10.00
+		prerequisite = {
+			focus = プロイセンとの密約
+		}
+		x = 24
+		y = 3
+
+	}
+	focus = {
+		id = フランスとの断交
+		icon = GFX_focus_renounce_the_treaty_of_triannon
+		cost = 10.00
+		prerequisite = {
+			focus = 王
+		}
+		x = 28
+		y = 2
+
+	}
+	focus = {
+		id = ヴァロワ衰退
+		icon = GFX_focus_focus_fra_fascist_threat
+		cost = 10.00
+		prerequisite = {
+			focus = フランスとの断交
+		}
+		x = 28
+		y = 3
+
+	}
+	focus = {
+		id = 下院の権限縮小
+		icon = GFX_focus_eng_the_kings_party
+		cost = 10.00
+		prerequisite = {
+			focus = ヴァロワ衰退
+			focus = ハノーファー精神
+		}
+		x = 26
+		y = 4
+
+	}
+	focus = {
+		id = 大陸ヨーロッパの監視
+		icon = GFX_focus_usa_focus_on_europe
+		cost = 10.00
+		prerequisite = {
+			focus = 下院の権限縮小
+		}
+		x = 24
+		y = 5
+
+	}
+	focus = {
+		id = 太平洋の保護
+		icon = GFX_focus_generic_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = 下院の権限縮小
+		}
+		x = 28
+		y = 5
+
+	}
+	focus = {
+		id = 日本との太平洋分割
+		icon = GFX_focus_jap_pacific_guardian
+		cost = 10.00
+		prerequisite = {
+			focus = 太平洋の保護
+		}
+		x = 28
+		y = 6
+
+	}
+	focus = {
+		id = 軍
+		icon = GFX_focus_eng_organise_the_blackshirts
+		cost = 10.00
+		prerequisite = {
+			focus = 1936年議会討論会
+		}
+		mutually_exclusive = {
+			focus = 神
+			focus = 王
+			focus = 官
+			focus = 民
+		}
+		x = 34
+		y = 1
+
+	}
+	focus = {
+		id = 共産党を批判
+		icon = GFX_focus_mex_privatisation
+		cost = 10.00
+		prerequisite = {
+			focus = 軍
+		}
+		x = 32
+		y = 2
+
+	}
+	focus = {
+		id = レーダー基地を爆破
+		icon = GFX_goal_generic_more_territorial_claims
+		cost = 10.00
+		prerequisite = {
+			focus = 共産党を批判
+		}
+		x = 32
+		y = 3
+
+	}
+	focus = {
+		id = バッキンガム宮殿占領
+		icon = GFX_goal_generic_military_sphere
+		cost = 10.00
+		prerequisite = {
+			focus = 軍
+		}
+		x = 34
+		y = 2
+
+	}
+	focus = {
+		id = 我等官軍
+		icon = GFX_focus_generic_manpower
+		cost = 10.00
+		prerequisite = {
+			focus = バッキンガム宮殿占領
+		}
+		x = 34
+		y = 3
+
+	}
+	focus = {
+		id = 兵器工場の買収
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 軍
+		}
+		x = 36
+		y = 2
+
+	}
+	focus = {
+		id = 民営工業の一括管理
+		icon = GFX_goal_continuous_repairments
+		cost = 10.00
+		prerequisite = {
+			focus = 兵器工場の買収
+		}
+		x = 36
+		y = 3
+
+	}
+	focus = {
+		id = 王室が国粋勢力を支持
+		icon = GFX_focus_ger_reichskommisariats
+		cost = 10.00
+		prerequisite = {
+			focus = レーダー基地を爆破
+		}
+		prerequisite = {
+			focus = 我等官軍
+		}
+		prerequisite = {
+			focus = 民営工業の一括管理
+		}
+		x = 34
+		y = 4
+
+	}
+	focus = {
+		id = イギリス帝国の復活
+		icon = GFX_focus_AST_never_gallipoli
+		cost = 10.00
+		prerequisite = {
+			focus = 王室が国粋勢力を支持
+		}
+		x = 34
+		y = 5
+
+	}
+	focus = {
+		id = 第二次百年戦争
+		icon = GFX_focus_attack_france
+		cost = 10.00
+		prerequisite = {
+			focus = イギリス帝国の復活
+		}
+		x = 36
+		y = 6
+
+	}
+	focus = {
+		id = 宝石は宝石箱に
+		icon = GFX_focus_attack_india
+		cost = 10.00
+		prerequisite = {
+			focus = イギリス帝国の復活
+		}
+		x = 30
+		y = 6
+
+	}
+	focus = {
+		id = 無敵艦隊を打ち砕き
+		icon = GFX_focus_focus_fra_intervention_spain
+		cost = 10.00
+		prerequisite = {
+			focus = イギリス帝国の復活
+		}
+		x = 32
+		y = 6
+
+	}
+	focus = {
+		id = 今や囚人
+		icon = GFX_focus_attack_britain
+		cost = 10.00
+		prerequisite = {
+			focus = イギリス帝国の復活
+		}
+		x = 38
+		y = 6
+
+	}
+	focus = {
+		id = 民営工場への予算分与
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 経済改革
+		}
+		x = 41
+		y = 1
+
+	}
+	focus = {
+		id = 武器の生産性検査
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = 経済改革
+		}
+		x = 44
+		y = 1
+
+	}
+	focus = {
+		id = 民営工場への予算分与Ⅱ
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 民営工場への予算分与
+			focus = 武器の生産性検査
+		}
+		x = 41
+		y = 2
+
+	}
+	focus = {
+		id = 効率的輸送計画
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		prerequisite = {
+			focus = 武器の生産性検査
+		}
+		x = 44
+		y = 2
+
+	}
+	focus = {
+		id = 民営工場への予算分与Ⅲ
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 民営工場への予算分与Ⅱ
+		}
+		prerequisite = {
+			focus = 効率的輸送計画
+		}
+		x = 41
+		y = 3
+
+	}
+	focus = {
+		id = 国営工場への予算分与
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 経済改革
+		}
+		x = 47
+		y = 1
+
+	}
+	focus = {
+		id = 国営工場への予算分与Ⅱ
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 国営工場への予算分与
+			focus = 武器の生産性検査
+		}
+		x = 47
+		y = 2
+
+	}
+	focus = {
+		id = 洋上補給の確保
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 10.00
+		prerequisite = {
+			focus = 効率的輸送計画
+		}
+		prerequisite = {
+			focus = 民営工場への予算分与Ⅱ
+		}
+		prerequisite = {
+			focus = 国営工場への予算分与Ⅱ
+		}
+		x = 44
+		y = 3
+
+	}
+	focus = {
+		id = 国営工場への予算分与Ⅲ
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 国営工場への予算分与Ⅱ
+		}
+		prerequisite = {
+			focus = 効率的輸送計画
+		}
+		x = 47
+		y = 3
+
+	}
+	focus = {
+		id = 陸軍
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		cost = 10.00
+		prerequisite = {
+			focus = 戦術研究
+		}
+		x = 55
+		y = 1
+
+	}
+	focus = {
+		id = 機械化戦力
+		icon = GFX_goal_generic_army_tanks
+		cost = 10.00
+		prerequisite = {
+			focus = 陸軍
+		}
+		x = 55
+		y = 3
+
+	}
+	focus = {
+		id = 空軍
+		icon = GFX_focus_usa_escort_fighters
+		cost = 10.00
+		prerequisite = {
+			focus = 戦術研究
+		}
+		x = 59
+		y = 1
+
+	}
+	focus = {
+		id = 空挺兵の編成
+		icon = GFX_focus_generic_paratrooper
+		cost = 10.00
+		prerequisite = {
+			focus = 空軍
+		}
+		prerequisite = {
+			focus = 陸軍
+		}
+		x = 57
+		y = 2
+
+	}
+	focus = {
+		id = 近接航空支援
+		icon = GFX_goal_generic_air_fighter2
+		cost = 10.00
+		prerequisite = {
+			focus = 空軍
+		}
+		x = 59
+		y = 3
+
+	}
+	focus = {
+		id = 海軍
+		icon = GFX_focus_generic_destroyer
+		cost = 10.00
+		prerequisite = {
+			focus = 戦術研究
+		}
+		x = 63
+		y = 1
+
+	}
+	focus = {
+		id = 航空母艦の建造
+		icon = GFX_goal_generic_navy_carrier
+		cost = 10.00
+		prerequisite = {
+			focus = 空軍
+		}
+		prerequisite = {
+			focus = 海軍
+		}
+		x = 61
+		y = 2
+
+	}
+	focus = {
+		id = 潜水艦への投資
+		icon = GFX_goal_generic_navy_submarine
+		cost = 10.00
+		prerequisite = {
+			focus = 海軍
+		}
+		x = 63
+		y = 3
+
+	}
+	focus = {
+		id = 総司令部の権限強化
+		icon = GFX_focus_eng_the_sun_never_sets
+		cost = 10.00
+		prerequisite = {
+			focus = 潜水艦への投資
+		}
+		prerequisite = {
+			focus = 機械化戦力
+		}
+		prerequisite = {
+			focus = 近接航空支援
+		}
+		prerequisite = {
+			focus = 航空母艦の建造
+		}
+		prerequisite = {
+			focus = 空挺兵の編成
+		}
+		x = 59
+		y = 4
+
+	}
+	focus = {
+		id = 現代型主力戦車
+		icon = GFX_focus_generic_tank_production
+		cost = 10.00
+		prerequisite = {
+			focus = 総司令部の権限強化
+		}
+		x = 51
+		y = 5
+
+	}
+	focus = {
+		id = 砲の規格統一
+		icon = GFX_goal_generic_army_artillery2
+		cost = 10.00
+		prerequisite = {
+			focus = 総司令部の権限強化
+		}
+		x = 53
+		y = 5
+
+	}
+	focus = {
+		id = 強固な防御
+		icon = GFX_goal_generic_construct_military
+		cost = 10.00
+		prerequisite = {
+			focus = 総司令部の権限強化
+		}
+		x = 55
+		y = 5
+
+	}
+	focus = {
+		id = 高高度爆撃
+		icon = GFX_goal_generic_air_bomber
+		cost = 10.00
+		prerequisite = {
+			focus = 総司令部の権限強化
+		}
+		x = 57
+		y = 5
+
+	}
+	focus = {
+		id = 高機動戦闘機
+		icon = GFX_goal_generic_air_fighter
+		cost = 10.00
+		prerequisite = {
+			focus = 総司令部の権限強化
+		}
+		x = 61
+		y = 5
+
+	}
+	focus = {
+		id = 巨大戦艦
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10.00
+		prerequisite = {
+			focus = 総司令部の権限強化
+		}
+		x = 63
+		y = 5
+
+	}
+	focus = {
+		id = 護衛駆逐艦
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 10.00
+		prerequisite = {
+			focus = 巨大戦艦
+		}
+		x = 63
+		y = 6
+
+	}
+	focus = {
+		id = 防空艦
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 10.00
+		prerequisite = {
+			focus = 総司令部の権限強化
+		}
+		x = 65
+		y = 5
+
+	}
+	focus = {
+		id = 海中レーダー機器
+		icon = GFX_goal_generic_navy_anti_submarine
+		cost = 10.00
+		prerequisite = {
+			focus = 防空艦
+		}
+		x = 65
+		y = 6
+
+	}
+	focus = {
+		id = 魚雷の量産
+		icon = GFX_goal_generic_air_naval_bomber
+		cost = 10.00
+		prerequisite = {
+			focus = 総司令部の権限強化
+		}
+		x = 67
+		y = 5
+
+	}
+	focus = {
+		id = 対潜魚雷
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 10.00
+		prerequisite = {
+			focus = 魚雷の量産
+		}
+		x = 67
+		y = 6
+
+	}
+	focus = {
+		id = 現代海軍
+		icon = GFX_focus_generic_destroyer
+		cost = 10.00
+		prerequisite = {
+			focus = 護衛駆逐艦
+		}
+		prerequisite = {
+			focus = 海中レーダー機器
+		}
+		prerequisite = {
+			focus = 対潜魚雷
+		}
+		x = 65
+		y = 7
+
+	}
+	focus = {
+		id = アラブ独立を提案
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10.00
+		prerequisite = {
+			focus = 対オスマン外交の開始
+		}
+		x = 69
+		y = 1
+
+	}
+	focus = {
+		id = 英仏露による分割を提案
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10.00
+		prerequisite = {
+			focus = 対オスマン外交の開始
+		}
+		x = 71
+		y = 1
+
+	}
+	focus = {
+		id = ユダヤ独立を提案
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10.00
+		prerequisite = {
+			focus = 対オスマン外交の開始
+		}
+		x = 73
+		y = 1
+
+	}
+	focus = {
+		id = 対オスマン外交の完了
+		icon = GFX_focus_generic_attack_turkey
+		cost = 10.00
+		prerequisite = {
+			focus = アラブ独立を提案
+		}
+		prerequisite = {
+			focus = 英仏露による分割を提案
+		}
+		prerequisite = {
+			focus = ユダヤ独立を提案
+		}
+		x = 71
+		y = 2
+
+	}
+	focus = {
+		id = フィラデルフィア条約の破棄
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		cost = 10.00
+		prerequisite = {
+			focus = 外交部門の設立
+		}
+		x = 6
+		y = 5
+
+	}
+	focus = {
+		id = 民間安全基本法
+		icon = GFX_goal_generic_defence
+		cost = 10.00
+		prerequisite = {
+			focus = 外交部門の設立
+		}
+		x = 4
+		y = 5
+
+	}
+	focus = {
+		id = 耐え難き諸法
+		icon = GFX_focus_spa_the_war_of_vengeance
+		cost = 10.00
+		prerequisite = {
+			focus = フィラデルフィア条約の破棄
+		}
+		prerequisite = {
+			focus = 民間安全基本法
+		}
+		prerequisite = {
+			focus = オーストラリア政府への警告文
+		}
+		prerequisite = {
+			focus = カナダへ政府の基地要求
+		}
+		x = 3
+		y = 6
+
+	}
+	focus = {
+		id = 囚人への警告
+		icon = GFX_focus_attack_australia
+		cost = 10.00
+		prerequisite = {
+			focus = MI6
+		}
+		prerequisite = {
+			focus = 英仏同盟
+		}
+		x = 8
+		y = 5
+
+	}
+	focus = {
+		id = オセアニア反乱
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		cost = 10.00
+		prerequisite = {
+			focus = 囚人への警告
+		}
+		prerequisite = {
+			focus = 亡命政府の駆逐
+		}
+		x = 9
+		y = 6
+
+	}
+	focus = {
+		id = 亡命政府の駆逐
+		icon = GFX_focus_attack_britain
+		cost = 10.00
+		prerequisite = {
+			focus = MI6
+		}
+		prerequisite = {
+			focus = 英仏同盟
+		}
+		x = 10
+		y = 5
+
+	}
+	focus = {
+		id = 海上戦力の確保
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10.00
+		prerequisite = {
+			focus = アムステルダム相互保護条約
+		}
+		x = 15
+		y = 6
+
+	}
+	focus = {
+		id = スペインを同盟に招待
+		icon = GFX_goal_generic_improve_relations
+		cost = 10.00
+		prerequisite = {
+			focus = アムステルダム相互保護条約
+		}
+		prerequisite = {
+			focus = バイエルン問題
+		}
+		x = 17
+		y = 6
+
+	}
+	focus = {
+		id = カナダへ投資を求める
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 10.00
+		prerequisite = {
+			focus = スペインを同盟に招待
+			focus = プロイセンを同盟に招待
+		}
+		prerequisite = {
+			focus = 海上戦力の確保
+		}
+		x = 17
+		y = 7
+
+	}
+	focus = {
+		id = 防衛予算の増加
+		icon = GFX_focus_generic_tank_production
+		cost = 10.00
+		prerequisite = {
+			focus = カナダへ投資を求める
+		}
+		prerequisite = {
+			focus = アメリカ資本の利用
+		}
+		x = 19
+		y = 8
+
+	}
+	focus = {
+		id = ハンブルク議定書
+		icon = GFX_focus_generic_aluminum
+		cost = 10.00
+		prerequisite = {
+			focus = 大陸ヨーロッパの監視
+		}
+		x = 24
+		y = 6
+
+	}
+	focus = {
+		id = 女王陛下の為に
+		icon = GFX_focus_generic_monarchy_2
+		cost = 10.00
+		prerequisite = {
+			focus = 下院の権限縮小
+		}
+		x = 26
+		y = 5
+
+	}
+	focus = {
+		id = 英日普三国同盟
+		icon = GFX_focus_rom_royal_dictatorship
+		cost = 10.00
+		prerequisite = {
+			focus = 女王陛下の為に
+		}
+		x = 26
+		y = 6
+
+	}
+	focus = {
+		id = 対岸を確保
+		icon = GFX_focus_hol_the_zuiderzee_works
+		cost = 10.00
+		prerequisite = {
+			focus = ハンブルク議定書
+			focus = 英日普三国同盟
+		}
+		x = 25
+		y = 7
+
+	}
+	focus = {
+		id = インド併合
+		icon = GFX_focus_RAJ_british_investors
+		cost = 10.00
+		prerequisite = {
+			focus = 日本との太平洋分割
+		}
+		prerequisite = {
+			focus = 英日普三国同盟
+		}
+		x = 27
+		y = 7
+
+	}
+	focus = {
+		id = 決着を付ける
+		icon = GFX_focus_attack_france
+		cost = 10.00
+		prerequisite = {
+			focus = インド併合
+		}
+		prerequisite = {
+			focus = 対岸を確保
+		}
+		x = 26
+		y = 8
+
+	}
+	focus = {
+		id = 矮星の最期
+		icon = GFX_focus_attack_japan
+		cost = 10.00
+		prerequisite = {
+			focus = イギリス帝国の復活
+		}
+		x = 34
+		y = 6
+
+	}
+	focus = {
+		id = 太陽の沈まない帝国
+		icon = GFX_focus_eng_imperial_federation
+		cost = 10.00
+		prerequisite = {
+			focus = 宝石は宝石箱に
+		}
+		prerequisite = {
+			focus = 今や囚人
+		}
+		prerequisite = {
+			focus = 無敵艦隊を打ち砕き
+		}
+		prerequisite = {
+			focus = 矮星の最期
+		}
+		prerequisite = {
+			focus = 第二次百年戦争
+		}
+		x = 34
+		y = 7
+
+	}
+	focus = {
+		id = 戦術核兵器
+		icon = GFX_focus_wonderweapons
+		cost = 10.00
+		prerequisite = {
+			focus = 極秘研究の開始
+		}
+		x = 46
+		y = 5
+
+	}
+	focus = {
+		id = 極秘研究の開始
+		icon = GFX_focus_research2
+		cost = 10.00
+		prerequisite = {
+			focus = 国営工場への予算分与Ⅲ
+		}
+		prerequisite = {
+			focus = 民営工場への予算分与Ⅲ
+		}
+		prerequisite = {
+			focus = 洋上補給の確保
+		}
+		x = 44
+		y = 4
+
+	}
+	focus = {
+		id = ロケット技術
+		icon = GFX_focus_rocketry
+		cost = 10.00
+		prerequisite = {
+			focus = 極秘研究の開始
+		}
+		x = 42
+		y = 5
+
+	}
+	focus = {
+		id = 柔軟な防御
+		icon = GFX_focus_chi_army_reform
+		cost = 10.00
+		prerequisite = {
+			focus = 強固な防御
+		}
+		x = 55
+		y = 6
+
+	}
+	focus = {
+		id = ジェット戦闘機
+		icon = GFX_focus_usa_escort_fighters
+		cost = 10.00
+		prerequisite = {
+			focus = 高機動戦闘機
+		}
+		x = 61
+		y = 6
+
+	}
+	focus = {
+		id = 飽和爆撃
+		icon = GFX_goal_generic_army_artillery
+		cost = 10.00
+		prerequisite = {
+			focus = 高高度爆撃
+		}
+		x = 57
+		y = 6
+
+	}
+	focus = {
+		id = 指揮系統の電子化
+		icon = GFX_focus_spa_the_spanish_miracle
+		cost = 10.00
+		prerequisite = {
+			focus = 機密情報処理プロトコル
+		}
+		x = 61
+		y = 9
+
+	}
+	focus = {
+		id = 暗視装備の標準化
+		icon = GFX_focus_generic_combined_arms
+		cost = 10.00
+		prerequisite = {
+			focus = 砲の規格統一
+		}
+		x = 53
+		y = 6
+
+	}
+	focus = {
+		id = チョバムアーマー
+		icon = GFX_focus_generic_license_production
+		cost = 10.00
+		prerequisite = {
+			focus = 現代型主力戦車
+		}
+		x = 51
+		y = 6
+
+	}
+	focus = {
+		id = ステルス機
+		icon = GFX_focus_yug_rogozarski
+		cost = 10.00
+		prerequisite = {
+			focus = 耐熱素材
+		}
+		x = 59
+		y = 6
+
+	}
+	focus = {
+		id = 耐熱素材
+		icon = GFX_goal_generic_major_war
+		cost = 10.00
+		prerequisite = {
+			focus = 総司令部の権限強化
+		}
+		x = 59
+		y = 5
+
+	}
+	focus = {
+		id = 機密情報処理プロトコル
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 10.00
+		prerequisite = {
+			focus = 現代陸軍
+		}
+		prerequisite = {
+			focus = 現代空軍
+		}
+		prerequisite = {
+			focus = 現代海軍
+		}
+		x = 59
+		y = 8
+
+	}
+	focus = {
+		id = 現代陸軍
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		cost = 10.00
+		prerequisite = {
+			focus = チョバムアーマー
+		}
+		prerequisite = {
+			focus = 暗視装備の標準化
+		}
+		prerequisite = {
+			focus = 柔軟な防御
+		}
+		x = 53
+		y = 7
+
+	}
+	focus = {
+		id = 現代空軍
+		icon = GFX_focus_usa_escort_fighters
+		cost = 10.00
+		prerequisite = {
+			focus = 飽和爆撃
+		}
+		prerequisite = {
+			focus = ステルス機
+		}
+		prerequisite = {
+			focus = ジェット戦闘機
+		}
+		x = 59
+		y = 7
+
+	}
+	focus = {
+		id = 戦術処理サーバー
+		icon = GFX_focus_spa_save_the_alcazar
+		cost = 10.00
+		prerequisite = {
+			focus = 機密情報処理プロトコル
+		}
+		x = 57
+		y = 9
+
+	}
+	focus = {
+		id = ICBM反撃の自動化
+		icon = GFX_focus_usa_focus_on_asia
+		cost = 10.00
+		prerequisite = {
+			focus = 機密情報処理プロトコル
+		}
+		x = 59
+		y = 9
+
+	}
+	focus = {
+		id = 核弾頭搭載ミサイル
+		icon = GFX_focus_spr_anarchism_knows_no_borders
+		cost = 10.00
+		prerequisite = {
+			focus = 戦術核兵器
+		}
+		prerequisite = {
+			focus = ロケット技術
+		}
+		x = 44
+		y = 6
+
+	}
+	focus = {
+		id = DefenseReadinessCondition5
+		icon = GFX_focus_eng_the_sun_never_sets
+		cost = 1.00
+		prerequisite = {
+			focus = 核弾頭搭載ミサイル
+		}
+		x = 44
+		y = 7
+
+	}
+	focus = {
+		id = DefenseReadinessCondition4
+		icon = GFX_focus_eng_the_sun_never_sets
+		cost = 1.00
+		prerequisite = {
+			focus = 核弾頭搭載ミサイル
+		}
+		prerequisite = {
+			focus = DefenseReadinessCondition5
+		}
+		x = 44
+		y = 8
+
+	}
+	focus = {
+		id = DefenseReadinessCondition3
+		icon = GFX_focus_eng_the_sun_never_sets
+		cost = 1.00
+		prerequisite = {
+			focus = 核弾頭搭載ミサイル
+		}
+		prerequisite = {
+			focus = DefenseReadinessCondition4
+		}
+		x = 44
+		y = 9
+
+	}
+	focus = {
+		id = DefenseReadinessCondition2
+		icon = GFX_focus_eng_the_sun_never_sets
+		cost = 1.00
+		prerequisite = {
+			focus = 核弾頭搭載ミサイル
+		}
+		prerequisite = {
+			focus = DefenseReadinessCondition3
+		}
+		x = 44
+		y = 10
+
+	}
+	focus = {
+		id = DefenseReadinessCondition1
+		icon = GFX_focus_eng_the_sun_never_sets
+		cost = 1.00
+		prerequisite = {
+			focus = 戦術処理サーバー
+		}
+		prerequisite = {
+			focus = ICBM反撃の自動化
+		}
+		prerequisite = {
+			focus = 指揮系統の電子化
+		}
+		x = 59
+		y = 10
+
+	}
+	focus = {
+		id = アーサー王の剣
+		icon = GFX_focus_eng_the_sun_never_sets
+		cost = 10.00
+		prerequisite = {
+			focus = DefenseReadinessCondition1
+		}
+		prerequisite = {
+			focus = DefenseReadinessCondition2
+		}
+		x = 52
+		y = 11
+
+	}
+}

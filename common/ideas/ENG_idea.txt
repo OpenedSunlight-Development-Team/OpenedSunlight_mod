@@ -1,0 +1,77 @@
+ideas = {
+
+	country = {
+
+		OPmod_idea_ENG_1 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = yes
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                production_speed_buildings_factor = -0.1
+                                industrial_capacity_factory = -0.5
+                                research_speed_factor = 0.1
+			}
+		}
+		OPmod_idea_ENG_2 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+                            always = no
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                mobilization_laws_cost_factor = 1
+                                trade_laws_cost_factor = 0.5
+			}
+		}
+		OPmod_idea_ENG_3 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+                            always = no
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                cic_to_target_factor = -0.3
+                                stability_factor = -0.25
+			}
+		}
+		OPmod_idea_ENG_4 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+                            always = no
+                        }
+
+			removal_cost = -1
+			
+			modifier = {
+                                drift_defence_factor = 0.3
+                                guarantee_cost = -0.35
+                                air_ace_generation_chance_factor = 0.15
+                                production_speed_industrial_complex_factor = 0.05
+                                production_speed_arms_factory_factor = -0.1
+			}
+		}
+}

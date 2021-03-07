@@ -1,0 +1,526 @@
+focus_tree = {
+	id = HANYO_DAYO
+	country = {
+		factor = 1
+	}
+	default = yes
+	focus = {
+		id = HANYO_1
+		text = 軍事介入の基本
+		icon = GFX_focus_generic_little_entente
+		cost = 10.00
+		mutually_exclusive = {
+			focus = HANYO_2
+			focus = HANYO_3
+		}
+		x = 2
+		y = 0
+		completion_reward = {
+			add_political_power = 250
+		}
+
+	}
+	focus = {
+		id = HANYO_2
+		text = 中立外交の基本
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 10.00
+		mutually_exclusive = {
+			focus = HANYO_1
+			focus = HANYO_3
+		}
+		x = 7
+		y = 0
+		completion_reward = {
+			add_political_power = 250
+		}
+
+	}
+	focus = {
+		id = HANYO_3
+		text = 宥和政策の基本
+		icon = GFX_focus_generic_diplomatic_treaty
+		cost = 10.00
+		mutually_exclusive = {
+			focus = HANYO_1
+			focus = HANYO_2
+		}
+		x = 12
+		y = 0
+		completion_reward = {
+			add_political_power = 250
+		}
+
+	}
+	focus = {
+		id = HANYO_23
+		text = 軍事方針
+		icon = GFX_goal_generic_political_pressure
+		cost = 10.00
+		x = 18
+		y = 0
+		completion_reward = {
+			add_manpower = 10000
+			army_experience = 200
+			air_experience = 100
+		}
+
+	}
+	focus = {
+		id = HANYO_4
+		text = 軍需工場の稼働
+		icon = GFX_goal_generic_production2
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_1
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 3
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = HANYO_5
+		text = 外交発言権を得る
+		icon = GFX_focus_generic_military_academy
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_1
+		}
+		x = 3
+		y = 1
+		completion_reward = {
+			add_war_support = 0.05
+		}
+
+	}
+	focus = {
+		id = HANYO_10
+		text = 徴兵法の改定
+		icon = GFX_focus_secret_rearmament
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_4
+			focus = HANYO_5
+		}
+		x = 1
+		y = 2
+		completion_reward = {
+			add_political_power = 100
+			add_ideas = militarism_focus
+		}
+
+	}
+	focus = {
+		id = HANYO_11
+		text = 元首の権限強化
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_5
+			focus = HANYO_4
+		}
+		x = 3
+		y = 2
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = HANYO_6
+		text = 非同盟主義
+		icon = GFX_focus_renounce_the_treaty_of_triannon
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_2
+		}
+		x = 6
+		y = 1
+		completion_reward = {
+			add_ideas = neutrality_idea
+		}
+
+	}
+	focus = {
+		id = HANYO_12
+		text = 中立銀行の設立
+		icon = GFX_focus_mex_privatisation
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_6
+		}
+		x = 5
+		y = 2
+		completion_reward = {
+			add_ideas = HANYODAYO_1
+		}
+
+	}
+	focus = {
+		id = HANYO_7
+		text = 民需工場の建設
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_2
+		}
+		x = 8
+		y = 1
+		completion_reward = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = HANYO_13
+		text = 武装中立の基本
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_6
+		}
+		prerequisite = {
+			focus = HANYO_7
+		}
+		x = 7
+		y = 2
+		completion_reward = {
+			add_ideas = HANYODAYO_2
+		}
+
+	}
+	focus = {
+		id = HANYO_14
+		text = 全家庭へ空襲ハンドブックを配布
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_7
+		}
+		x = 9
+		y = 2
+		completion_reward = {
+			add_ideas = HANYODAYO_3
+		}
+
+	}
+	focus = {
+		id = HANYO_8
+		text = 防衛第一
+		icon = GFX_focus_generic_coastal_fort
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_3
+		}
+		x = 11
+		y = 1
+		completion_reward = {
+			add_ideas = HANYODAYO_4
+		}
+
+	}
+	focus = {
+		id = HANYO_9
+		text = インフラ事業の開始
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_3
+		}
+		x = 13
+		y = 1
+		completion_reward = {
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = HANYO_15
+		text = 平和外交
+		icon = GFX_goal_anschluss
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_8
+			focus = HANYO_9
+		}
+		x = 11
+		y = 2
+		completion_reward = {
+			add_ideas = HANYODAYO_5
+		}
+
+	}
+	focus = {
+		id = HANYO_16
+		text = 科学大学への支援
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_9
+			focus = HANYO_8
+		}
+		x = 13
+		y = 2
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+	}
+	focus = {
+		id = HANYO_24
+		text = 陸軍司令官の登用
+		icon = GFX_focus_generic_military_mission
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_23
+		}
+		x = 16
+		y = 1
+		completion_reward = {
+			add_ideas = HANYODAYO_6
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+				}
+		}
+
+	}
+	focus = {
+		id = HANYO_27
+		text = 戦車研究への投資
+		icon = GFX_goal_generic_army_tanks
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_24
+		}
+		x = 16
+		y = 2
+		completion_reward = {
+			add_ideas = HANYODAYO_9
+		}
+
+	}
+	focus = {
+		id = HANYO_25
+		text = 空軍司令官の登用
+		icon = GFX_focus_generic_military_mission
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_23
+		}
+		x = 18
+		y = 1
+		completion_reward = {
+			add_ideas = HANYODAYO_8
+		}
+
+	}
+	focus = {
+		id = HANYO_28
+		text = 戦闘機実験
+		icon = GFX_goal_generic_air_fighter
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_25
+		}
+		x = 18
+		y = 2
+		completion_reward = {
+			add_ideas = HANYODAYO_10
+		}
+
+	}
+	focus = {
+		id = HANYO_17
+		text = 軍事研究への投資
+		icon = GFX_focus_chi_army_reform
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_10
+			focus = HANYO_11
+		}
+		x = 1
+		y = 3
+		completion_reward = {
+			add_ideas = HANYODAYO_11
+		}
+
+	}
+	focus = {
+		id = HANYO_18
+		text = 外国資本の徴収
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_11
+			focus = HANYO_10
+		}
+		x = 3
+		y = 3
+		completion_reward = {
+			add_ideas = HANYODAYO_12
+		}
+
+	}
+	focus = {
+		id = HANYO_19
+		text = 成人兵役法
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_12
+			focus = HANYO_13
+		}
+		x = 6
+		y = 3
+		completion_reward = {
+			add_ideas = HANYODAYO_13
+		}
+
+	}
+	focus = {
+		id = HANYO_20
+		text = 国際研究機関
+		icon = GFX_goal_tfv_generic_tech_sharing
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_13
+			focus = HANYO_14
+		}
+		x = 8
+		y = 3
+		completion_reward = {
+			add_ideas = HANYODAYO_14
+		}
+
+	}
+	focus = {
+		id = HANYO_21
+		text = 扇動家の活動制限
+		icon = GFX_focus_focus_fra_fascist_threat
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_15
+			focus = HANYO_16
+		}
+		x = 11
+		y = 3
+		completion_reward = {
+			add_ideas = HANYODAYO_15
+		}
+
+	}
+	focus = {
+		id = HANYO_22
+		text = 小銃の大量生産
+		icon = GFX_goal_generic_production
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_15
+			focus = HANYO_16
+		}
+		x = 13
+		y = 3
+		completion_reward = {
+			add_ideas = HANYODAYO_16
+		}
+
+	}
+	focus = {
+		id = HANYO_26
+		text = 海軍司令官の登用
+		icon = GFX_focus_generic_military_mission
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_23
+		}
+		x = 20
+		y = 1
+		completion_reward = {
+			add_ideas = HANYODAYO_7
+		}
+
+	}
+	focus = {
+		id = HANYO_29
+		text = 艦艇の建造計画
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_26
+		}
+		x = 20
+		y = 2
+		completion_reward = {
+			add_ideas = HANYODAYO_17
+		}
+
+	}
+	focus = {
+		id = HANYO_30
+		text = 核兵器開発
+		icon = GFX_focus_wonderweapons
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_27
+		}
+		prerequisite = {
+			focus = HANYO_28
+		}
+		prerequisite = {
+			focus = HANYO_29
+		}
+		x = 17
+		y = 3
+		completion_reward = {
+			add_ideas = HANYODAYO_18
+		}
+
+	}
+	focus = {
+		id = HANYO_31
+		text = ロケット開発
+		icon = GFX_focus_rocketry
+		cost = 10.00
+		prerequisite = {
+			focus = HANYO_27
+		}
+		prerequisite = {
+			focus = HANYO_28
+		}
+		prerequisite = {
+			focus = HANYO_29
+		}
+		x = 19
+		y = 3
+		completion_reward = {
+			add_ideas = HANYODAYO_19
+		}
+
+	}
+}

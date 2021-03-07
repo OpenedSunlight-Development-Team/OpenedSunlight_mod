@@ -1,0 +1,32 @@
+
+state={
+	id=824
+	name="STATE_824"
+
+	resources={
+		chromium=1
+	}
+
+	manpower = 248000
+	
+	state_category = rural
+	
+	history={
+		owner = SPR
+		add_core_of = MOR
+		victory_points = {
+			7215 5 
+		}
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 2
+			air_base = 2
+			7215 = {
+				naval_base = 4
+			}
+		}
+	}
+	provinces={
+		4199 7215 10113 12087 12100 
+	}
+}

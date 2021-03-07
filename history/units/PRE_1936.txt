@@ -1,0 +1,897 @@
+﻿division_template = {
+	name = "Infantry Division" 				# Triangular Infantry Division
+	division_names_group = GRE_INF_01
+	# Prior to 1940 mobilization = 3rd, 4th, 5th, 9th, 10, 13th;
+	# 	6th, 7th, 11th, and 12th had 2 regiments; 14th had 1 regiment
+	# Note: sources have all Greek regular infantry as mountain-trained
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+		infantry = { x = 3 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Motorized Division" 				# Square Infantry Division
+	division_names_group = GRE_MNT_01
+	# Prior to 1940 mobilization = 1st, 2nd, 8th
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Cuirassiers Division" 				# Square Infantry Division
+	division_names_group = GRE_MNT_01
+	# Prior to 1940 mobilization = 1st, 2nd, 8th
+	regiments = {
+		heavy_armor = { x = 0 y = 0 }
+		heavy_armor = { x = 0 y = 1 }
+		heavy_armor = { x = 0 y = 2 }
+		light_armor = { x = 0 y = 3 }
+		light_armor = { x = 0 y = 4 }
+		heavy_armor = { x = 1 y = 0 }
+		heavy_armor = { x = 1 y = 1 }
+		heavy_armor = { x = 1 y = 2 }
+		light_armor = { x = 1 y = 3 }
+		light_armor = { x = 1 y = 4 }
+		mountaineers = { x = 2 y = 0 }
+		mountaineers = { x = 2 y = 1 }
+		mountaineers = { x = 2 y = 2 }
+		mountaineers = { x = 2 y = 3 }
+		mountaineers = { x = 2 y = 4 }
+		mountaineers = { x = 3 y = 0 }
+		mountaineers = { x = 3 y = 1 }
+		artillery_brigade = { x = 3 y = 2 }
+		artillery_brigade = { x = 3 y = 3 }
+		artillery_brigade = { x = 3 y = 4 }
+		mountaineers = { x = 4 y = 0 }
+		mountaineers = { x = 4 y = 1 }
+		artillery_brigade = { x = 4 y = 2 }
+		artillery_brigade = { x = 4 y = 3 }c
+		artillery_brigade = { x = 4 y = 4 }
+		cavalry = { x = 5 y = 0 }
+		cavalry = { x = 5 y = 1 }
+
+
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+		recon = { x = 0 y = 0 }
+		field_hospital = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Cavalry Division" 			# Cavalry Division
+	division_names_group = GRE_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+		cavalry = { x = 2 y = 0 }
+		cavalry = { x = 2 y = 1 }
+		cavalry = { x = 2 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }      # Motorized recon inf bn
+		engineer = { x = 0 y = 1 }
+		artillery = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	######## Ellinikó Genikó Epiteleío ########
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3326
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11233
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11346
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 587
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11360
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3547
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6535
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6535
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3326
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11233
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11346
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 587
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11360
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3547
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6535
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6535
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3326
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11233
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11346
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 587
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11360
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3547
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6535
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6535
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3326
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11233
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11346
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 587
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11360
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3547
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6535
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6535
+		division_template = "Infantry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6488
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6257
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6524
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6521
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6282
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3561
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11276
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3398
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 425
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 9571
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11445
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11415
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3207
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6257
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6524
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6521
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6282
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3561
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11276
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3398
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 425
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 9571
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11445
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 11415
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3207
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3207
+		division_template = "Motorized Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3460
+		division_template = "Motorized Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3207
+		division_template = "Motorized Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 9334
+		division_template = "Motorized Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 362
+		division_template = "Motorized Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 3230
+		division_template = "Cavalry Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 514
+		division_template = "Cuirassiers Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6321
+		division_template = "Cuirassiers Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 6321
+		division_template = "Cuirassiers Division" 
+		start_experience_factor = 0.2
+
+
+	}
+	division = { 
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 514
+		division_template = "Cuirassiers Division" 
+		start_experience_factor = 0.2
+
+
+	}
+
+}
+
+##### Air units -- Greece did not start to modernize air force until 1937 -- but they should still have their interwar air force available #####
+air_wings = {
+	##### Elliniki Polemiki Aeroporia #####
+	56 = { 
+		# Machitís Moíras
+		fighter_equipment_1 = {
+			owner = "PRE" 
+			amount = 72
+			create_if_missing = yes
+		}
+		# Moíra vomvistón
+		tac_bomber_equipment_0 = {
+			owner = "PRE" 
+			amount = 71
+			create_if_missing = yes
+		}
+	}
+	61 = { 
+		# Machitís Moíras
+		fighter_equipment_0 = {
+			owner = "PRE" 
+			amount = 43
+			create_if_missing = yes
+		}
+		# Moíra vomvistón
+		tac_bomber_equipment_0 = {
+			owner = "PRE" 
+			amount = 10
+			create_if_missing = yes
+		}
+	}
+	57 = { 
+		# Machitís Moíras
+		fighter_equipment_1 = {
+			owner = "PRE" 
+			amount = 150
+			create_if_missing = yes
+		}
+		# Moíra vomvistón
+		tac_bomber_equipment_0 = {
+			owner = "PRE" 
+			amount = 34
+			create_if_missing = yes
+		}
+	}
+}
+
+

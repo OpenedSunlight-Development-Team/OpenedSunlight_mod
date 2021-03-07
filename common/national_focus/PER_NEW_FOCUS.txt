@@ -1,0 +1,609 @@
+focus_tree = {
+	id = PER_NEW_FOCUS
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = PER
+		}
+	}
+	default = no
+	focus = {
+		id = 政治討論
+		icon = GFX_goal_generic_demand_territory
+		cost = 10.00
+		x = 4
+		y = 0
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.03
+		}
+
+	}
+	focus = {
+		id = 近代戦法の研究
+		icon = GFX_focus_research
+		cost = 10.00
+		x = 11
+		y = 0
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+	}
+	focus = {
+		id = 公害防止対策基本法
+		icon = GFX_goal_generic_construction2
+		cost = 10.00
+		x = 16
+		y = 0
+		completion_reward = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = 権限の強化
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 10.00
+		prerequisite = {
+			focus = 政治討論
+		}
+		mutually_exclusive = {
+			focus = 労働者の権利を優先
+		}
+		x = 2
+		y = 1
+		completion_reward = {
+			add_popularity = { ideology = despotism popularity = 0.45 }
+		}
+
+	}
+	focus = {
+		id = 新型装備への更新
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 権限の強化
+		}
+		x = 1
+		y = 2
+		completion_reward = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = arms_factory
+				level = 5
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = イギリスポンドの売却
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 10.00
+		prerequisite = {
+			focus = 権限の強化
+		}
+		x = 3
+		y = 2
+		completion_reward = {
+			add_ideas = OPmod_idea_PER_1
+		}
+
+	}
+	focus = {
+		id = 西方地域の要求
+		icon = GFX_focus_generic_attack_kurdistan
+		cost = 30.00
+		prerequisite = {
+			focus = 新型装備への更新
+		}
+		prerequisite = {
+			focus = イギリスポンドの売却
+		}
+		x = 2
+		y = 3
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = KUR
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = 労働者の権利を優先
+		icon = GFX_focus_generic_join_comintern
+		cost = 10.00
+		prerequisite = {
+			focus = 政治討論
+		}
+		mutually_exclusive = {
+			focus = 権限の強化
+		}
+		x = 6
+		y = 1
+		completion_reward = {
+			add_war_support = -0.2
+			add_popularity = { ideology = socialismri popularity = 0.2 }
+			add_popularity = { ideology = communism popularity = 0.2 }
+		}
+
+	}
+	focus = {
+		id = 左派野党による議会掌握
+		icon = GFX_focus_generic_soviet_politics
+		cost = 10.00
+		prerequisite = {
+			focus = 労働者の権利を優先
+		}
+		x = 5
+		y = 2
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.5 }
+			set_politics = { ruling_party = communism elections_allowed = yes }
+		}
+
+	}
+	focus = {
+		id = 軍の強化
+		icon = GFX_focus_secret_rearmament
+		cost = 10.00
+		prerequisite = {
+			focus = 労働者の権利を優先
+		}
+		x = 7
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+				}
+		}
+
+	}
+	focus = {
+		id = 対オスマンへ方針転換
+		icon = GFX_focus_renounce_the_treaty_of_triannon
+		cost = 10.00
+		prerequisite = {
+			focus = 左派野党による議会掌握
+			focus = 軍の強化
+		}
+		x = 5
+		y = 3
+		completion_reward = {
+			add_war_support = 0.1
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+				}
+			add_popularity = { ideology = despotism popularity = -0.1 }
+		}
+
+
+	}
+	focus = {
+		id = クルディスタンへの最後通牒
+		icon = GFX_focus_generic_attack_kurdistan
+		cost = 30.00
+		prerequisite = {
+			focus = 左派野党による議会掌握
+			focus = 軍の強化
+		}
+		x = 7
+		y = 3
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = KUR
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = 少数精鋭の基本
+		icon = GFX_focus_chi_army_reform
+		cost = 10.00
+		prerequisite = {
+			focus = 近代戦法の研究
+		}
+		x = 9
+		y = 1
+		completion_reward = {
+			add_ideas = OPmod_idea_PER_2
+		}
+
+	}
+	focus = {
+		id = 偵察騎兵
+		icon = GFX_goal_generic_cavalry
+		cost = 10.00
+		prerequisite = {
+			focus = 少数精鋭の基本
+		}
+		x = 9
+		y = 2
+		completion_reward = {
+			add_ideas = OPmod_idea_PER_3
+		}
+
+	}
+	focus = {
+		id = 空軍の強化
+		icon = GFX_goal_generic_air_fighter
+		cost = 10.00
+		prerequisite = {
+			focus = 近代戦法の研究
+		}
+		x = 11
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 2
+				category = air_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = 急降下爆撃
+		icon = GFX_goal_generic_air_fighter2
+		cost = 10.00
+		prerequisite = {
+			focus = 空軍の強化
+		}
+		x = 11
+		y = 2
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ITA_bomber_effort
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+				#technology = tactical_bomber2
+				#technology = tactical_bomber3
+			}
+		}
+
+	}
+	focus = {
+		id = 空挺部隊の編制
+		icon = GFX_focus_generic_paratrooper
+		cost = 10.00
+		prerequisite = {
+			focus = 急降下爆撃
+		}
+		prerequisite = {
+			focus = 偵察騎兵
+		}
+		x = 10
+		y = 3
+		completion_reward = {
+			add_ideas = OPmod_idea_PER_4
+		}
+
+	}
+	focus = {
+		id = 防衛海軍
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 10.00
+		prerequisite = {
+			focus = 近代戦法の研究
+		}
+		x = 13
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 1.0
+				uses = 2
+				category = cl_tech
+			}
+		}
+
+	}
+	focus = {
+		id = 潜水攻撃
+		icon = GFX_goal_generic_navy_submarine
+		cost = 10.00
+		prerequisite = {
+			focus = 防衛海軍
+		}
+		x = 13
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 2
+				category = submarine_doctrine
+				#technology = submarine_operations
+				#technology = undersea_blockade
+				#technology = convoy_interdiction
+				#technology = submarine_offensive
+			}
+		}
+
+	}
+	focus = {
+		id = 軽空母の可能性
+		icon = GFX_goal_generic_navy_carrier
+		cost = 10.00
+		prerequisite = {
+			focus = 急降下爆撃
+		}
+		prerequisite = {
+			focus = 潜水攻撃
+		}
+		x = 12
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				name = cv_bonus
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+
+	}
+	focus = {
+		id = 兵器工場
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 公害防止対策基本法
+		}
+		x = 15
+		y = 1
+		completion_reward = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = 民営工業会社
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 公害防止対策基本法
+		}
+		x = 17
+		y = 1
+		completion_reward = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = 土地の効率的な運用
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		prerequisite = {
+			focus = 兵器工場
+			focus = 民営工業会社
+		}
+		x = 16
+		y = 2
+		completion_reward = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = 兵器工場Ⅱ
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 土地の効率的な運用
+		}
+		x = 15
+		y = 3
+		completion_reward = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = 米国資本家を招待
+		icon = GFX_focus_chi_mission_to_the_us
+		cost = 10.00
+		prerequisite = {
+			focus = 西方地域の要求
+		}
+		x = 1
+		y = 4
+		completion_reward = {
+			add_ideas = OPmod_idea_PER_5
+		}
+
+	}
+	focus = {
+		id = イギリス企業との連携
+		icon = GFX_focus_chi_british_cooperation
+		cost = 10.00
+		prerequisite = {
+			focus = 西方地域の要求
+		}
+		x = 3
+		y = 4
+		completion_reward = {
+			add_ideas = OPmod_idea_PER_6
+		}
+
+	}
+	focus = {
+		id = フランスへ協力を求める
+		icon = GFX_focus_chi_reach_out_to_france
+		cost = 10.00
+		prerequisite = {
+			focus = クルディスタンへの最後通牒
+			focus = 対オスマンへ方針転換
+		}
+		x = 5
+		y = 4
+		completion_reward = {
+			add_ideas = OPmod_idea_PER_7
+		}
+
+	}
+	focus = {
+		id = 全国民への普通教育の開始
+		icon = GFX_focus_generic_military_academy
+		cost = 10.00
+		prerequisite = {
+			focus = 対オスマンへ方針転換
+			focus = クルディスタンへの最後通牒
+		}
+		x = 7
+		y = 4
+		completion_reward = {
+			add_stability = 0.1
+			add_ideas = OPmod_idea_PER_8
+		}
+
+	}
+	focus = {
+		id = 自動車化部隊
+		icon = GFX_goal_generic_army_motorized
+		cost = 10.00
+		prerequisite = {
+			focus = 偵察騎兵
+		}
+		x = 9
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				uses = 1
+				category = motorised_infantry
+			}
+		}
+
+	}
+	focus = {
+		id = 戦闘機の整備工場
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 急降下爆撃
+		}
+		x = 11
+		y = 4
+		completion_reward = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 1
+				category = light_fighter
+			}
+		}
+
+	}
+	focus = {
+		id = 造船ドックへの投資
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 10.00
+		prerequisite = {
+			focus = 潜水攻撃
+		}
+		x = 13
+		y = 4
+		completion_reward = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = naval_base
+				level = 1
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = 民営工業会社Ⅱ
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = 土地の効率的な運用
+		}
+		x = 17
+		y = 3
+		completion_reward = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = 工場建造の効率化
+		icon = GFX_goal_generic_construct_civilian
+		cost = 10.00
+		prerequisite = {
+			focus = 兵器工場Ⅱ
+			focus = 民営工業会社Ⅱ
+		}
+		x = 16
+		y = 4
+		completion_reward = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 4
+				instant_build = yes
+			}
+		}
+
+	}
+}

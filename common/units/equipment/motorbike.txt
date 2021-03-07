@@ -1,0 +1,39 @@
+equipments = {
+
+	motorbike_equipment = {
+		year = 1936
+
+		is_archetype = yes
+		picture = archetype_motorbike_equipment		
+		is_buildable = no
+		type = {
+			#infantry #Removing inf type 
+			motorized
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		maximum_speed = 20
+		reliability = 0.8
+		hardness = 0.1
+
+		#Space taken in convoy
+		lend_lease_cost = 2
+
+		build_cost_ic = 3
+		resources = {
+			steel = 1
+			rubber = 1
+		}
+		
+		fuel_consumption = 0.7
+	}
+
+	motorbike_equipment_1 = {
+		year = 1936
+
+		archetype = motorbike_equipment
+		priority = 30			
+	}
+}

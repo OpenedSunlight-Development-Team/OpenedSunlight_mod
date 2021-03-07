@@ -1,0 +1,460 @@
+focus_tree = {
+	id = NEW_EST
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = EST
+		}
+	}
+	default = no
+	focus = {
+		id = OSBALT_OSEST
+		text = バルト統一への道
+		icon = GFX_focus_generic_treaty
+		cost = 10.00
+		mutually_exclusive = {
+			focus = OSEST_FRA
+		}
+		x = 2
+		y = 0
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.1
+		}
+
+	}
+	focus = {
+		id = OSEST_FRA
+		text = フランスに保護を求める
+		icon = GFX_focus_chi_reach_out_to_france
+		cost = 10.00
+		mutually_exclusive = {
+			focus = OSBALT_OSEST
+		}
+		x = 6
+		y = 0
+		completion_reward = {
+			add_popularity = { ideology = socialismri popularity = 0.5 }
+			set_politics = { ruling_party = socialismri elections_allowed = yes }
+		}
+
+	}
+	focus = {
+		id = OSEST_RIKUGUN
+		text = 陸軍省
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 10.00
+		x = 9
+		y = 0
+		completion_reward = {
+			army_experience = 100
+		}
+
+	}
+	focus = {
+		id = OSEST_KAIGUN
+		text = 海軍省
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 10.00
+		x = 11
+		y = 0
+		completion_reward = {
+			navy_experience = 100
+		}
+
+	}
+	focus = {
+		id = OSEST_ECO
+		text = 経済圏の統一
+		icon = GFX_focus_mex_privatisation
+		cost = 10.00
+		prerequisite = {
+			focus = OSBALT_OSEST
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = OPmod_idea_BLT_0
+		}
+
+	}
+	focus = {
+		id = OSEST_INF
+		text = インフラ規格統一事業
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = OSBALT_OSEST
+		}
+		x = 3
+		y = 1
+		completion_reward = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = OSEST_LOZ
+		text = ローザンヌ会議
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_ECO
+		}
+		prerequisite = {
+			focus = OSEST_INF
+		}
+		x = 2
+		y = 2
+		completion_reward = {
+			add_war_support = 0.15
+			add_stability = 0.1
+		}
+
+	}
+	focus = {
+		id = OSEST_LIT
+		text = リトアニア編入
+		icon = GFX_focus_generic_treaty
+		cost = 5.00
+		prerequisite = {
+			focus = OSEST_LOZ
+		}
+		x = 1
+		y = 3
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = { has_war_with = LIT }
+			LIT = {
+				exists = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			annex_country = { target = LIT transfer_troops = yes }
+		}
+
+	}
+	focus = {
+		id = OSEST_LAT
+		text = ラトビア編入
+		icon = GFX_focus_generic_treaty
+		cost = 5.00
+		prerequisite = {
+			focus = OSEST_LOZ
+		}
+		x = 3
+		y = 3
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = { has_war_with = LAT }
+			LAT = {
+				exists = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			annex_country = { target = LAT transfer_troops = yes }
+		}
+
+	}
+	focus = {
+		id = OSEST_HEL2
+		text = 労働者評議会の設立
+		icon = GFX_focus_generic_soviet_politics
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_FRA
+		}
+		x = 5
+		y = 1
+		completion_reward = {
+			add_political_power = 150
+			add_popularity = { ideology = socialismri popularity = 0.5 }
+			add_stability = 0.1
+		}
+
+	}
+	focus = {
+		id = OSEST_GUN
+		text = 軍直轄の工場
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_FRA
+		}
+		x = 7
+		y = 1
+		completion_reward = {
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = OSEST_SIK
+		text = 士官教育
+		icon = GFX_focus_generic_military_mission
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_HEL2
+		}
+		prerequisite = {
+			focus = OSEST_GUN
+		}
+		x = 6
+		y = 2
+		completion_reward = {
+			add_ideas = OPmod_idea_BLT_1
+		}
+
+	}
+	focus = {
+		id = OSEST_HOK
+		text = 補給施設の建造
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_SIK
+		}
+		x = 5
+		y = 3
+		completion_reward = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = OSEST_BLS
+		text = バルト海の安全確保
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_SIK
+		}
+		x = 7
+		y = 3
+		completion_reward = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = naval_base
+				level = 2
+				instant_build = yes
+			}
+		}
+
+	}
+	focus = {
+		id = OSEST_GAIJIN
+		text = 外人部隊の創設
+		icon = GFX_focus_secret_rearmament
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_RIKUGUN
+		}
+		x = 9
+		y = 1
+		completion_reward = {
+			add_ideas = OPmod_idea_BLT_2
+		}
+
+	}
+	focus = {
+		id = OSEST_JUNYOKAN
+		text = 巡洋艦開発
+		icon = GFX_focus_generic_cruiser2
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_KAIGUN
+		}
+		x = 11
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 1.0
+				uses = 2
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+
+	}
+	focus = {
+		id = OSEST_AIRSCI
+		text = 航空力学の研究
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_GAIJIN
+			focus = OSEST_JUNYOKAN
+		}
+		x = 10
+		y = 2
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+	}
+	focus = {
+		id = OSEST_YOUAREKING
+		text = 空軍運用方法の考慮
+		icon = GFX_focus_usa_escort_fighters
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_AIRSCI
+		}
+		x = 10
+		y = 3
+		completion_reward = {
+			air_experience = 150
+		}
+
+
+	}
+	focus = {
+		id = OSEST_NOV
+		text = ノヴゴロド侵攻
+		icon = GFX_focus_generic_provoke_border_clashes
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_LIT
+			focus = OSEST_LAT
+		}
+		x = 1
+		y = 4
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = NOV
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = OSEST_BEL
+		text = 白ロシアの確保
+		icon = GFX_focus_generic_provoke_border_clashes
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_LIT
+			focus = OSEST_LAT
+		}
+		x = 3
+		y = 4
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = BLR
+				expire = 0
+			}
+		}
+
+	}
+	focus = {
+		id = OSEST_USAUSA
+		text = フランス人科学者の招待
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_HOK
+			focus = OSEST_BLS
+		}
+		x = 6
+		y = 4
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+	}
+	focus = {
+		id = OSEST_ZINCHI
+		text = 陣地転換訓練
+		icon = GFX_focus_chi_army_reform
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_YOUAREKING
+		}
+		x = 9
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 2
+				category = land_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = OSEST_KAIBOSENKAN
+		text = 海防戦艦の効率利用
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10.00
+		prerequisite = {
+			focus = OSEST_YOUAREKING
+		}
+		x = 11
+		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = bb_bonus
+				bonus = 1.0
+				uses = 2
+				category = bb_tech
+				category = bc_tech
+			}
+		}
+
+	}
+}

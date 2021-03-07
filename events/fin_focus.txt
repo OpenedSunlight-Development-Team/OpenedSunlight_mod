@@ -1,0 +1,244 @@
+﻿add_namespace = fin_focus
+
+news_event = {
+	id = fin_focus.1
+	title = fin_focus.1.t
+	desc = fin_focus.1.d
+	picture = fin_focus_event1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fin_focus.1.a	#sounds good
+
+	}
+}
+country_event = {
+	id = fin_focus.2
+	title = fin_focus.2.t
+	desc = fin_focus.2.d
+	picture = GFX_event_fin2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fin_focus.2.a	#sounds good
+FIN = {
+annex_country = {
+    target = NOR
+    transfer_troops = yes
+}
+}
+	}
+	option = {
+		name = fin_focus.2.b	#sounds good
+
+	}
+
+
+
+}
+country_event = {
+	id = fin_focus.3
+	title = fin_focus.3.t
+	desc = fin_focus.3.d
+	picture = GFX_event_fin2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fin_focus.3.a	#sounds good
+FIN = {
+annex_country = {
+    target = DEN
+    transfer_troops = yes
+}
+}
+	}
+	option = {
+		name = fin_focus.3.b	#sounds good
+
+	}
+
+
+
+}
+country_event = {
+	id = fin_focus.4
+	title = fin_focus.4.t
+	desc = fin_focus.4.d
+	picture = GFX_event_fin2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fin_focus.4.a	#sounds good
+FIN = {
+annex_country = {
+    target = SWE
+    transfer_troops = yes
+}
+}
+	}
+	option = {
+		name = fin_focus.4.b	#sounds good
+
+	}
+
+
+
+}
+news_event = {
+	id = fin_focus.6
+	title = fin_focus.6.t
+	desc = fin_focus.6.d
+	picture = fin_focus_event3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fin_focus.6.a	#sounds good
+
+	}
+}
+news_event = {
+	id = fin_focus.7
+	title = fin_focus.7.t
+	desc = fin_focus.7.d
+	picture = fin_focus_event1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fin_focus.7.a	#sounds good
+
+	}
+}
+news_event = {
+	id = fin_focus.9
+	title = fin_focus.9.t
+	desc = fin_focus.9.d
+	picture = fin_focus_event3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fin_focus.9.a	#sounds good
+
+	}
+}
+news_event = {
+	id = fin_focus.10
+	title = fin_focus.10.t
+	desc = fin_focus.10.d
+	picture = fin_focus_event5
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fin_focus.10.a	#sounds good
+
+	}
+}
+news_event = {
+	id = fin_focus.11
+	title = fin_focus.11.t
+	desc = fin_focus.11.d
+	picture = fin_focus_event4
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fin_focus.11.a	#sounds good
+
+	}
+}
+news_event = {
+	id = fin_focus.12
+	title = fin_focus.12.t
+	desc = fin_focus.12.d
+	picture = fin_focus_event1
+	
+	is_triggered_only = yes
+		trigger = {
+		original_tag = FIN
+		date = 1936.5.5
+
+
+	}	
+	option = {
+		name = fin_focus.12.a	#sounds good
+
+	}
+}
+country_event = {
+	id = fin_focus.13
+	title = fin_focus.13.t
+	desc = fin_focus.13.d
+	picture = GFX_report
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fin_focus.13.a	#sounds good
+country_event = { 
+    id = fin_focus.14
+
+}
+
+	}
+	option = {
+		name = fin_focus.13.b	#sounds good
+
+
+	}
+}
+country_event = {
+	id = fin_focus.14
+	title = fin_focus.14.t
+	desc = fin_focus.14.d
+	picture = GFX_report
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fin_focus.14.a	#sounds good
+			add_equipment_to_stockpile = {
+    type = improved_light_tank
+    amount = 220
+    producer = FIN
+}
+
+	}
+	option = {
+		name = fin_focus.14.b	#sounds good
+			add_equipment_to_stockpile = {
+    type = improved_light_td
+    amount = 220
+    producer = FIN
+}
+
+
+	}
+	option = {
+		name = fin_focus.14.c	#sounds good
+			add_equipment_to_stockpile = {
+    type = improved_light_art
+    amount = 220
+    producer = FIN
+}
+
+
+	}
+	option = {
+		name = fin_focus.14.d	#sounds good
+			add_equipment_to_stockpile = {
+		    type = improved_light_spaa
+    amount = 220
+    producer = FIN
+			}
+
+
+	}
+}
+}

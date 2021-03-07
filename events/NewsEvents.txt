@@ -1,0 +1,87 @@
+﻿###########################
+# News Events
+###########################
+
+add_namespace = news
+
+# Italia Claims Istanbul - Turkey Folds
+news_event = {
+	id = news.1
+	title = news.1.t
+	desc = news.1.d
+	picture = GFX_news_event_romanian_soldiers
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.1.a
+		trigger = {
+			NOT = {
+				TAG = ITA
+				TAG = TUR
+				is_in_faction_with = ITA
+			}
+		}
+	}
+	option = {
+		name = news.1.b
+		trigger = { TAG = ITA }
+	}
+	option = {
+		name = news.1.c
+		trigger = { TAG = TUR }
+	}
+	option = {
+		name = news.1.e
+		trigger = {
+			NOT = {
+				TAG = ITA
+				TAG = TUR
+			}
+			is_in_faction_with = ITA
+		}
+	}
+}
+
+# German Claims Memel - Lithuania Rejects Demands
+news_event = {
+	id = news.2
+	title = news.2.t
+	desc = news.2.d
+	picture = GFX_news_event_german_soldiers
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.2.a
+		trigger = {
+			NOT = {
+				TAG = ITA
+				TAG = TUR
+				is_in_faction_with = ITA
+			}
+		}
+	}
+	option = {
+		name = news.2.b
+		trigger = { TAG = ITA }
+	}
+	option = {
+		name = news.2.c
+		trigger = { TAG = TUR }
+	}
+	option = {
+		name = news.2.b
+		trigger = {
+			NOT = {
+				TAG = ITA
+				TAG = TUR
+			}
+			is_in_faction_with = ITA
+		}
+	}
+}
